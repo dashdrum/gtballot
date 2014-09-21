@@ -1,0 +1,4 @@
+## for testing only
+
+django-debug-toolbar
+factory-boy
