@@ -1,0 +1,4 @@
+django
+-e git://github.com/dashdrum/dashdrum-django-snips.git#egg=dashdrum-django-snips
+django-annoying
+django-braces
