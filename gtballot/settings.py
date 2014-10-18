@@ -45,10 +45,15 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+    # 'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
+
+import django
+
+if django.get_version() > '1.5.99':
+    MIDDLEWARE_CLASSES = MIDDLEWARE_CLASSES + ('django.contrib.auth.middleware.SessionAuthenticationMiddleware',)
 
 ROOT_URLCONF = 'gtballot.urls'
 
