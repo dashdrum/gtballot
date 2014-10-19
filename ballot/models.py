@@ -167,7 +167,7 @@ class Office(ModelBase):
 	name  = models.CharField(max_length=100,blank=False,null=False)
 
 	def __unicode__(self):
-		return self.district + ' ' + self.name
+		return self.district.__unicode__() + ' ' + self.name
 
 	# @property
 	# def allow_delete(self):
@@ -190,7 +190,7 @@ class Race(ModelBase):
 	office = models.ForeignKey(Office,blank=False,null=False)
 
 	def __unicode__(self):
-		return self.election + ' ' + self.office
+		return self.election.__unicode__() + ' ' + self.office.__unicode__()
 
 	# @property
 	# def allow_delete(self):

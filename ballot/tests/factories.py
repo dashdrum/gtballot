@@ -41,3 +41,49 @@ class ElectionFactory(factory.DjangoModelFactory):
 
     name = factory.Sequence(lambda n: 'Election' + n, str)
     election_date = (now() + timedelta(days=100)).date()
+
+class PrecinctFactory(factory.DjangoModelFactory):
+    FACTORY_FOR = Precinct
+
+    municipality = factory.SubFactory(MunicipalityFactory)
+    prec_number = factory.Sequence(lambda n: n, str)
+    polling_location = factory.Sequence(lambda n: "Location " + n, str)
+
+class DistrictFactory(factory.DjangoModelFactory):
+    FACTORY_FOR = District
+
+    name = factory.Sequence(lambda n: "District " + n, str)
+    govt_unit = factory.SubFactory(GovernmentalUnitFactory)
+    # precincts
+
+class OfficeFactory(factory.DjangoModelFactory):
+    FACTORY_FOR = Office
+
+    district = factory.SubFactory(DistrictFactory)
+    name = factory.Sequence(lambda n: "Office " + n, str)
+
+class RaceFactory(factory.DjangoModelFactory):
+    FACTORY_FOR = Race
+
+    votes_allowed = factory.Sequence(lambda n: n, int)
+    election = factory.SubFactory(ElectionFactory)
+    office = factory.SubFactory(OfficeFactory)
+
+class CandidateFactory(factory.DjangoModelFactory):
+    FACTORY_FOR = Candidate
+
+    race = factory.SubFactory(RaceFactory)
+    name = factory.Sequence(lambda n: "Candidate " + n, str)
+    ticket_mate = None
+    party = factory.SubFactory(PartyFactory)
+    incumbent = False
+    url = factory.Sequence(lambda n: 'http://example.com/' + n, str)
+
+class ProposalFactory(factory.DjangoModelFactory):
+    FACTORY_FOR = Proposal
+
+    district = factory.SubFactory(DistrictFactory)
+    election = factory.SubFactory(ElectionFactory)
+    title = factory.Sequence(lambda n: "Proposal " + n, str)
+    text = factory.Sequence(lambda n: ("Lorem Ipsum " + n) * 100, str)
+
