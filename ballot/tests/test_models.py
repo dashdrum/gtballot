@@ -6,7 +6,7 @@ from django.core.exceptions import ValidationError
 from datetime import datetime, timedelta
 
     
-from factories import (PartyFactory, UnitLevelFactory, GovernmentalUnitFactory, MunicipalityFactory, ElectionFactory)
+from .factories import (PartyFactory, UnitLevelFactory, GovernmentalUnitFactory, MunicipalityFactory, ElectionFactory)
 
 #### Testing the Models
 

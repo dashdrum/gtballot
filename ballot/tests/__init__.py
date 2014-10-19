@@ -1,1 +1,1 @@
-from test_models import TestPartyModel
+from .test_models import (TestPartyModel, TestUnitLevelModel, TestGovernmentalUnitModel, TestElectionModel, TestMunicipalityModel)

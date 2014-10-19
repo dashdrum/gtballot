@@ -2,7 +2,7 @@ from django.contrib import admin
 
 ##----------------------------------------------------------------------------##
 
-from models import (Party, UnitLevel, GovernmentalUnit, Municipality,
+from .models import (Party, UnitLevel, GovernmentalUnit, Municipality,
 					Election, Precinct, District, Office, Race,
 					Candidate, Proposal)
 
