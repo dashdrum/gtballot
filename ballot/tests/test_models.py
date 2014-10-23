@@ -27,85 +27,123 @@ class TestPartyModel(BallotTestCase):
         p = PartyFactory.create()
         self.assertTrue(p.allow_delete)
 
+        c = CandidateFactory.create(party=p)
+        self.assertFalse(p.allow_delete)
+
 class TestUnitLevelModel(BallotTestCase):
 
     def test_unicode_value(self):
-        p = UnitLevelFactory.create()
-        self.assertEqual(p.__unicode__(), p.name)
+        u = UnitLevelFactory.create()
+        self.assertEqual(u.__unicode__(), u.name)
         
     def test_allow_delete(self):
-        p = UnitLevelFactory.create()
-        self.assertTrue(p.allow_delete)
+        u = UnitLevelFactory.create()
+        self.assertTrue(u.allow_delete)
+
+        g = GovernmentalUnitFactory.create(unit_level=u)
+        self.assertFalse(u.allow_delete)
 
 class TestGovernmentalUnitModel(BallotTestCase):
 
     def test_unicode_value(self):
-        p = GovernmentalUnitFactory.create()
-        self.assertEqual(p.__unicode__(), p.name)
+        g = GovernmentalUnitFactory.create()
+        self.assertEqual(g.__unicode__(), g.name)
         
     def test_allow_delete(self):
-        p = GovernmentalUnitFactory.create()
-        self.assertTrue(p.allow_delete)
+        g = GovernmentalUnitFactory.create()
+        self.assertTrue(g.allow_delete)
+
+        d = DistrictFactory.create(govt_unit=g)
+        self.assertFalse(g.allow_delete)
 
 class TestMunicipalityModel(BallotTestCase):
 
     def test_unicode_value(self):
-        p = MunicipalityFactory.create()
-        self.assertEqual(p.__unicode__(), p.name)
+        m = MunicipalityFactory.create()
+        self.assertEqual(m.__unicode__(), m.name)
         
     def test_allow_delete(self):
-        p = MunicipalityFactory.create()
-        self.assertTrue(p.allow_delete)
+        m = MunicipalityFactory.create()
+        self.assertTrue(m.allow_delete)
+
+        pr = PrecinctFactory.create(municipality=m)
+        self.assertFalse(m.allow_delete)
 
 class TestElectionModel(BallotTestCase):
 
     def test_unicode_value(self):
-        p = ElectionFactory.create()
-        self.assertEqual(p.__unicode__(), p.name)
+        e = ElectionFactory.create()
+        self.assertEqual(e.__unicode__(), e.name)
         
     def test_allow_delete(self):
-        p = ElectionFactory.create()
-        self.assertTrue(p.allow_delete)
+        e = ElectionFactory.create()
+        self.assertTrue(e.allow_delete)
+
+        r = RaceFactory.create(election=e)
+        self.assertFalse(e.allow_delete)
+
+        e2 = ElectionFactory.create()
+        pp = ProposalFactory.create(election=e2)
+        self.assertFalse(e2.allow_delete)
 
 class TestPrecinctModel(BallotTestCase):
 
     def test_unicode_value(self):
-        p = PrecinctFactory.create()
-        self.assertEqual(p.__unicode__(), p.municipality.code + ' ' + p.prec_number)
+        pr = PrecinctFactory.create()
+        self.assertEqual(pr.__unicode__(), pr.municipality.code + ' ' + pr.prec_number)
         
     def test_allow_delete(self):
-        p = PrecinctFactory.create()
-        self.assertTrue(p.allow_delete)
+        pr = PrecinctFactory.create()
+        self.assertTrue(pr.allow_delete)
+
+        d = DistrictFactory.create()
+        d.precints.add(pr)
+        d.save()
+        self.assertFalse(pr.allow_delete)
+
 
 class TestDistrictModel(BallotTestCase):
 
     def test_unicode_value(self):
-        p = DistrictFactory.create()
-        self.assertEqual(p.__unicode__(), p.name)
+        d = DistrictFactory.create()
+        self.assertEqual(d.__unicode__(), d.name)
         
     def test_allow_delete(self):
-        p = DistrictFactory.create()
-        self.assertTrue(p.allow_delete)
+        d = DistrictFactory.create()
+        self.assertTrue(d.allow_delete)
+
+        o = OfficeFactory.create(district=d)
+        self.assertFalse(d.allow_delete)
+
+        d2 = DistrictFactory.create()
+        pp = ProposalFactory.create(district=d2)
+        self.assertFalse(d.allow_delete)
 
 class TestOfficeModel(BallotTestCase):
 
     def test_unicode_value(self):
-        p = OfficeFactory.create()
-        self.assertEqual(p.__unicode__(), p.district.__unicode__() + ' ' + p.name)
+        o = OfficeFactory.create()
+        self.assertEqual(o.__unicode__(), o.district.__unicode__() + ' ' + o.name)
         
     def test_allow_delete(self):
-        p = OfficeFactory.create()
-        self.assertTrue(p.allow_delete)
+        o = OfficeFactory.create()
+        self.assertTrue(o.allow_delete)
+
+        r = RaceFactory.create(office=o)
+        self.assertFalse(o.allow_delete)
 
 class TestRaceModel(BallotTestCase):
 
     def test_unicode_value(self):
-        p = RaceFactory.create()
-        self.assertEqual(p.__unicode__(), p.election.__unicode__() + ' ' + p.office.__unicode__())
+        r = RaceFactory.create()
+        self.assertEqual(r.__unicode__(), r.election.__unicode__() + ' ' + r.office.__unicode__())
         
     def test_allow_delete(self):
-        p = RaceFactory.create()
-        self.assertTrue(p.allow_delete)
+        r = RaceFactory.create()
+        self.assertTrue(r.allow_delete)
+
+        c = CandidateFactory.create(race=r)
+        self.assertFalse(r.allow_delete)
 
 class TestCandidateModel(BallotTestCase):
 

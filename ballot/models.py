@@ -9,13 +9,13 @@ class Party(ModelBase):
 	def __unicode__(self):
 		return self.name
 
-	# @property
-	# def allow_delete(self):
-	# 	''' any contacts linked ? '''
-	# 	if len(Carrier.objects.get(id=self.id).contacts.all()) == 0 :
-	# 		return True
-	# 	else:
-	# 		return False
+	@property
+	def allow_delete(self):
+		''' any candidates linked ? '''
+		if len(Party.objects.get(id=self.id).candidate_set.all()) == 0 :
+			return True
+		else:
+			return False
 
 	class Meta:
 		ordering = ["name"]
@@ -32,13 +32,13 @@ class UnitLevel(ModelBase): # (Federal, State, City, Township, Village, School, 
 	def __unicode__(self):
 		return self.name
 
-	# @property
-	# def allow_delete(self):
-	# 	''' any contacts linked ? '''
-	# 	if len(Carrier.objects.get(id=self.id).contacts.all()) == 0 :
-	# 		return True
-	# 	else:
-	# 		return False
+	@property
+	def allow_delete(self):
+		''' any govt units linked ? '''
+		if len(UnitLevel.objects.get(id=self.id).governmentalunit_set.all()) == 0 :
+			return True
+		else:
+			return False
 
 	class Meta:
 		ordering = ["name"]
@@ -54,13 +54,13 @@ class GovernmentalUnit(ModelBase):
 	def __unicode__(self):
 		return self.name
 
-	# @property
-	# def allow_delete(self):
-	# 	''' any contacts linked ? '''
-	# 	if len(Carrier.objects.get(id=self.id).contacts.all()) == 0 :
-	# 		return True
-	# 	else:
-	# 		return False
+	@property
+	def allow_delete(self):
+		''' any districts linked ? '''
+		if len(GovernmentalUnit.objects.get(id=self.id).district_set.all()) == 0 :
+			return True
+		else:
+			return False
 
 	class Meta:
 		ordering = ["name"]
@@ -76,13 +76,13 @@ class Municipality(ModelBase): # (Name of a precinct)
 	def __unicode__(self):
 		return self.name
 
-	# @property
-	# def allow_delete(self):
-	# 	''' any contacts linked ? '''
-	# 	if len(Carrier.objects.get(id=self.id).contacts.all()) == 0 :
-	# 		return True
-	# 	else:
-	# 		return False
+	@property
+	def allow_delete(self):
+		''' any Precincts linked ? '''
+		if len(Municipality.objects.get(id=self.id).precinct_set.all()) == 0 :
+			return True
+		else:
+			return False
 
 	class Meta:
 		ordering = ["name"]
@@ -101,13 +101,13 @@ class Election(ModelBase):
 	def __unicode__(self):
 		return self.name
 
-	# @property
-	# def allow_delete(self):
-	# 	''' any contacts linked ? '''
-	# 	if len(Carrier.objects.get(id=self.id).contacts.all()) == 0 :
-	# 		return True
-	# 	else:
-	# 		return False
+	@property
+	def allow_delete(self):
+		''' any races or proposals linked ? '''
+		if len(Election.objects.get(id=self.id).race_set.all()) == 0 and len(Election.objects.get(id=self.id).proposal_set.all()) == 0 :
+			return True
+		else:
+			return False
 
 	class Meta:
 		ordering = ["election_date"]
@@ -124,13 +124,13 @@ class Precinct(ModelBase):
 	def __unicode__(self):
 		return self.municipality.code + ' ' + self.prec_number
 
-	# @property
-	# def allow_delete(self):
-	# 	''' any contacts linked ? '''
-	# 	if len(Carrier.objects.get(id=self.id).contacts.all()) == 0 :
-	# 		return True
-	# 	else:
-	# 		return False
+	@property
+	def allow_delete(self):
+		''' any districts linked ? '''
+		if len(Precinct.objects.get(id=self.id).district_set.all()) == 0 :
+			return True
+		else:
+			return False
 
 	class Meta:
 		ordering = ["municipality","prec_number"]
@@ -147,13 +147,13 @@ class District(ModelBase):
 	def __unicode__(self):
 		return self.name
 
-	# @property
-	# def allow_delete(self):
-	# 	''' any contacts linked ? '''
-	# 	if len(Carrier.objects.get(id=self.id).contacts.all()) == 0 :
-	# 		return True
-	# 	else:
-	# 		return False
+	@property
+	def allow_delete(self):
+		''' any offices or proposals linked ? '''
+		if len(District.objects.get(id=self.id).office_set.all()) == 0 and len(District.objects.get(id=self.id).proposal_set.all()) == 0 :
+			return True
+		else:
+			return False
 
 	class Meta:
 		ordering = ["govt_unit","name"]
@@ -169,13 +169,13 @@ class Office(ModelBase):
 	def __unicode__(self):
 		return self.district.__unicode__() + ' ' + self.name
 
-	# @property
-	# def allow_delete(self):
-	# 	''' any contacts linked ? '''
-	# 	if len(Carrier.objects.get(id=self.id).contacts.all()) == 0 :
-	# 		return True
-	# 	else:
-	# 		return False
+	@property
+	def allow_delete(self):
+		''' any races linked ? '''
+		if len(Office.objects.get(id=self.id).race_set.all()) == 0 :
+			return True
+		else:
+			return False
 
 	class Meta:
 		ordering = ["district","name"]
@@ -192,13 +192,13 @@ class Race(ModelBase):
 	def __unicode__(self):
 		return self.election.__unicode__() + ' ' + self.office.__unicode__()
 
-	# @property
-	# def allow_delete(self):
-	# 	''' any contacts linked ? '''
-	# 	if len(Carrier.objects.get(id=self.id).contacts.all()) == 0 :
-	# 		return True
-	# 	else:
-	# 		return False
+	@property
+	def allow_delete(self):
+		''' any candidates linked ? '''
+		if len(Race.objects.get(id=self.id).candidate_set.all()) == 0 :
+			return True
+		else:
+			return False
 
 	class Meta:
 		ordering = ["election","office"]
