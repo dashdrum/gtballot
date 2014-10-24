@@ -23,6 +23,6 @@ class Migration(migrations.Migration):
             model_name='candidate',
             name='party',
             field=models.ForeignKey(null=True, to='ballot.Party', blank=True),
-            preserve_default=True,
+            # preserve_default=True,
         ),
     ]
