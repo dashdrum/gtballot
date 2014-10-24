@@ -1,12 +1,16 @@
+from __future__ import unicode_literals
+from django.utils.encoding import python_2_unicode_compatible
+
 from django.db import models
 
 from snips.models import ModelBase
 
+@python_2_unicode_compatible
 class Party(ModelBase):
 	code = models.CharField(max_length=3,blank=False,null=False)
 	name = models.CharField(max_length=100,blank=False,null=False)
 
-	def __unicode__(self):
+	def __str__(self):
 		return self.name
 
 	@property
@@ -25,11 +29,12 @@ class Party(ModelBase):
 	class Admin:
 		pass
 
+@python_2_unicode_compatible
 class UnitLevel(ModelBase): # (Federal, State, City, Township, Village, School, etc.)
 	name = models.CharField(max_length=100,blank=False,null=False)
 	code = models.CharField(max_length=3,blank=False,null=False)
 
-	def __unicode__(self):
+	def __str__(self):
 		return self.name
 
 	@property
@@ -47,11 +52,13 @@ class UnitLevel(ModelBase): # (Federal, State, City, Township, Village, School, 
 	class Admin:
 		pass
 
+
+@python_2_unicode_compatible
 class GovernmentalUnit(ModelBase):
 	name = models.CharField(max_length=100,blank=False,null=False)
 	unit_level = models.ForeignKey(UnitLevel,blank=False,null=False)
 
-	def __unicode__(self):
+	def __str__(self):
 		return self.name
 
 	@property
@@ -69,11 +76,13 @@ class GovernmentalUnit(ModelBase):
 	class Admin:
 		pass
 
+
+@python_2_unicode_compatible
 class Municipality(ModelBase): # (Name of a precinct)
 	name = models.CharField(max_length=100,blank=False,null=False)
 	code = models.CharField(max_length=3,blank=False,null=False)
 
-	def __unicode__(self):
+	def __str__(self):
 		return self.name
 
 	@property
@@ -94,11 +103,13 @@ class Municipality(ModelBase): # (Name of a precinct)
 
 ##----------------------------------------------------------------------------##	
 
+
+@python_2_unicode_compatible
 class Election(ModelBase):
 	name = models.CharField(max_length=100,blank=False,null=False)
 	election_date = models.DateField(blank=False,null=False)
 
-	def __unicode__(self):
+	def __str__(self):
 		return self.name
 
 	@property
@@ -116,12 +127,14 @@ class Election(ModelBase):
 	class Admin:
 		pass
 
+
+@python_2_unicode_compatible
 class Precinct(ModelBase):
 	municipality = models.ForeignKey(Municipality,blank=False,null=False)
 	prec_number = models.CharField(max_length=2,blank=False,null=False)
 	polling_location = models.CharField(max_length=100,blank=False,null=False)
 
-	def __unicode__(self):
+	def __str__(self):
 		return self.municipality.code + ' ' + self.prec_number
 
 	@property
@@ -139,12 +152,14 @@ class Precinct(ModelBase):
 	class Admin:
 		pass
 
+
+@python_2_unicode_compatible
 class District(ModelBase):
 	name = models.CharField(max_length=100,blank=False,null=False)
 	govt_unit  = models.ForeignKey(GovernmentalUnit,blank=False,null=False)
 	precints = models.ManyToManyField(Precinct)
 
-	def __unicode__(self):
+	def __str__(self):
 		return self.name
 
 	@property
@@ -162,12 +177,14 @@ class District(ModelBase):
 	class Admin:
 		pass
 
+
+@python_2_unicode_compatible
 class Office(ModelBase):
 	district = models.ForeignKey(District,blank=False,null=False)
 	name  = models.CharField(max_length=100,blank=False,null=False)
 
-	def __unicode__(self):
-		return self.district.__unicode__() + ' ' + self.name
+	def __str__(self):
+		return self.district.__str__() + ' ' + self.name
 
 	@property
 	def allow_delete(self):
@@ -184,13 +201,15 @@ class Office(ModelBase):
 	class Admin:
 		pass
 
+
+@python_2_unicode_compatible
 class Race(ModelBase):
 	votes_allowed = models.IntegerField(blank=False,null=False,default=1)
 	election = models.ForeignKey(Election,blank=False,null=False)
 	office = models.ForeignKey(Office,blank=False,null=False)
 
-	def __unicode__(self):
-		return self.election.__unicode__() + ' ' + self.office.__unicode__()
+	def __str__(self):
+		return self.election.__str__() + ' ' + self.office.__str__()
 
 	@property
 	def allow_delete(self):
@@ -207,15 +226,17 @@ class Race(ModelBase):
 	class Admin:
 		pass
 
+
+@python_2_unicode_compatible
 class Candidate(ModelBase):
 	race = models.ForeignKey(Race,blank=False,null=False)
 	name  = models.CharField(max_length=100,blank=False,null=False)
 	ticket_mate  = models.CharField(max_length=100,blank=True,null=True) # (Lt. Gov, Vice Prez)
-	party = models.ForeignKey(Party,blank=False,null=False)
+	party = models.ForeignKey(Party,blank=True,null=True)
 	incumbent = models.BooleanField(blank=False,null=False,default=False)
 	url = models.URLField(blank=True,null=True)
 
-	def __unicode__(self):
+	def __str__(self):
 		return self.name
 
 	class Meta:
@@ -225,13 +246,15 @@ class Candidate(ModelBase):
 	class Admin:
 		pass
 
+
+@python_2_unicode_compatible
 class Proposal(ModelBase):
 	district = models.ForeignKey(District,blank=False,null=False)
 	election = models.ForeignKey(Election,blank=False,null=False)
 	title = models.CharField(max_length=200,blank=False,null=False)
 	text = models.TextField(blank=False,null=False)
 
-	def __unicode__(self):
+	def __str__(self):
 		return self.title
 
 	class Meta:
