@@ -1,0 +1,2263 @@
+[
+{
+  "model": "ballot.party",
+  "fields": {
+    "updated_on": "2014-10-26T14:19:05.383Z",
+    "name": "Republican",
+    "created_on": "2014-10-24T00:40:51.254Z",
+    "code": "REP"
+  },
+  "pk": 1
+},
+{
+  "model": "ballot.party",
+  "fields": {
+    "updated_on": "2014-10-26T14:18:33.668Z",
+    "name": "Democratic",
+    "created_on": "2014-10-26T12:33:27.890Z",
+    "code": "DEM"
+  },
+  "pk": 2
+},
+{
+  "model": "ballot.party",
+  "fields": {
+    "updated_on": "2014-10-26T14:18:48.043Z",
+    "name": "Libertarian",
+    "created_on": "2014-10-26T12:33:33.887Z",
+    "code": "LIB"
+  },
+  "pk": 3
+},
+{
+  "model": "ballot.party",
+  "fields": {
+    "updated_on": "2014-10-26T14:18:41.451Z",
+    "name": "Green",
+    "created_on": "2014-10-26T12:33:44.192Z",
+    "code": "GRN"
+  },
+  "pk": 4
+},
+{
+  "model": "ballot.party",
+  "fields": {
+    "updated_on": "2014-10-26T14:19:01.248Z",
+    "name": "Pirate",
+    "created_on": "2014-10-26T12:33:54.898Z",
+    "code": "PIR"
+  },
+  "pk": 5
+},
+{
+  "model": "ballot.party",
+  "fields": {
+    "updated_on": "2014-10-26T14:17:09.762Z",
+    "name": "US Taxpayers",
+    "created_on": "2014-10-26T14:17:09.762Z",
+    "code": "UST"
+  },
+  "pk": 6
+},
+{
+  "model": "ballot.party",
+  "fields": {
+    "updated_on": "2014-10-26T14:19:35.729Z",
+    "name": "Natural Law",
+    "created_on": "2014-10-26T14:19:35.728Z",
+    "code": "NL"
+  },
+  "pk": 7
+},
+{
+  "model": "ballot.party",
+  "fields": {
+    "updated_on": "2014-10-26T14:20:04.042Z",
+    "name": "Reform",
+    "created_on": "2014-10-26T14:20:04.042Z",
+    "code": "REF"
+  },
+  "pk": 8
+},
+{
+  "model": "ballot.party",
+  "fields": {
+    "updated_on": "2014-10-26T14:20:22.595Z",
+    "name": "Communist",
+    "created_on": "2014-10-26T14:20:22.595Z",
+    "code": "COM"
+  },
+  "pk": 9
+},
+{
+  "model": "ballot.party",
+  "fields": {
+    "updated_on": "2014-10-26T14:20:56.132Z",
+    "name": "Socialist Equality",
+    "created_on": "2014-10-26T14:20:56.131Z",
+    "code": "SOE"
+  },
+  "pk": 10
+},
+{
+  "model": "ballot.party",
+  "fields": {
+    "updated_on": "2014-10-26T14:21:06.122Z",
+    "name": "Socialist Workers",
+    "created_on": "2014-10-26T14:21:06.122Z",
+    "code": "SOW"
+  },
+  "pk": 11
+},
+{
+  "model": "ballot.unitlevel",
+  "fields": {
+    "updated_on": "2014-10-24T00:36:42.542Z",
+    "name": "Township",
+    "created_on": "2014-10-24T00:36:42.542Z",
+    "code": "T"
+  },
+  "pk": 1
+},
+{
+  "model": "ballot.unitlevel",
+  "fields": {
+    "updated_on": "2014-10-26T12:34:28.939Z",
+    "name": "Village",
+    "created_on": "2014-10-26T12:34:28.938Z",
+    "code": "V"
+  },
+  "pk": 2
+},
+{
+  "model": "ballot.unitlevel",
+  "fields": {
+    "updated_on": "2014-10-26T12:34:36.444Z",
+    "name": "City",
+    "created_on": "2014-10-26T12:34:36.444Z",
+    "code": "C"
+  },
+  "pk": 3
+},
+{
+  "model": "ballot.unitlevel",
+  "fields": {
+    "updated_on": "2014-10-26T12:34:52.505Z",
+    "name": "County",
+    "created_on": "2014-10-26T12:34:52.504Z",
+    "code": "CO"
+  },
+  "pk": 4
+},
+{
+  "model": "ballot.unitlevel",
+  "fields": {
+    "updated_on": "2014-10-26T12:35:41.609Z",
+    "name": "State",
+    "created_on": "2014-10-26T12:35:04.038Z",
+    "code": "S"
+  },
+  "pk": 5
+},
+{
+  "model": "ballot.unitlevel",
+  "fields": {
+    "updated_on": "2014-10-26T12:35:50.495Z",
+    "name": "Federal",
+    "created_on": "2014-10-26T12:35:17.415Z",
+    "code": "F"
+  },
+  "pk": 6
+},
+{
+  "model": "ballot.unitlevel",
+  "fields": {
+    "updated_on": "2014-10-26T14:04:10.735Z",
+    "name": "Community College",
+    "created_on": "2014-10-26T14:04:10.734Z",
+    "code": "CC"
+  },
+  "pk": 7
+},
+{
+  "model": "ballot.governmentalunit",
+  "fields": {
+    "updated_on": "2014-10-24T00:36:44.960Z",
+    "name": "Acme Township",
+    "created_on": "2014-10-24T00:36:44.959Z",
+    "unit_level": 1
+  },
+  "pk": 1
+},
+{
+  "model": "ballot.governmentalunit",
+  "fields": {
+    "updated_on": "2014-10-26T12:54:17.514Z",
+    "name": "Blair Township",
+    "created_on": "2014-10-26T12:54:17.513Z",
+    "unit_level": 1
+  },
+  "pk": 2
+},
+{
+  "model": "ballot.governmentalunit",
+  "fields": {
+    "updated_on": "2014-10-26T12:54:30.764Z",
+    "name": "East Bay Charter Township",
+    "created_on": "2014-10-26T12:54:30.762Z",
+    "unit_level": 1
+  },
+  "pk": 3
+},
+{
+  "model": "ballot.governmentalunit",
+  "fields": {
+    "updated_on": "2014-10-26T12:54:49.890Z",
+    "name": "Fife Lake Township",
+    "created_on": "2014-10-26T12:54:49.888Z",
+    "unit_level": 1
+  },
+  "pk": 4
+},
+{
+  "model": "ballot.governmentalunit",
+  "fields": {
+    "updated_on": "2014-10-26T12:55:04.114Z",
+    "name": "Fife Lake",
+    "created_on": "2014-10-26T12:55:04.111Z",
+    "unit_level": 2
+  },
+  "pk": 5
+},
+{
+  "model": "ballot.governmentalunit",
+  "fields": {
+    "updated_on": "2014-10-26T12:55:24.042Z",
+    "name": "Garfield Charter Township",
+    "created_on": "2014-10-26T12:55:24.039Z",
+    "unit_level": 1
+  },
+  "pk": 6
+},
+{
+  "model": "ballot.governmentalunit",
+  "fields": {
+    "updated_on": "2014-10-26T13:18:12.072Z",
+    "name": "Green Lake Township",
+    "created_on": "2014-10-26T12:55:31.977Z",
+    "unit_level": 1
+  },
+  "pk": 7
+},
+{
+  "model": "ballot.governmentalunit",
+  "fields": {
+    "updated_on": "2014-10-26T12:55:46.098Z",
+    "name": "Grant Township",
+    "created_on": "2014-10-26T12:55:46.096Z",
+    "unit_level": 1
+  },
+  "pk": 8
+},
+{
+  "model": "ballot.governmentalunit",
+  "fields": {
+    "updated_on": "2014-10-26T12:55:53.370Z",
+    "name": "Kingsley",
+    "created_on": "2014-10-26T12:55:53.367Z",
+    "unit_level": 2
+  },
+  "pk": 9
+},
+{
+  "model": "ballot.governmentalunit",
+  "fields": {
+    "updated_on": "2014-10-26T12:56:06.710Z",
+    "name": "Long Lake Township",
+    "created_on": "2014-10-26T12:56:06.707Z",
+    "unit_level": 1
+  },
+  "pk": 10
+},
+{
+  "model": "ballot.governmentalunit",
+  "fields": {
+    "updated_on": "2014-10-26T12:56:14.972Z",
+    "name": "Mayfield Township",
+    "created_on": "2014-10-26T12:56:14.970Z",
+    "unit_level": 1
+  },
+  "pk": 11
+},
+{
+  "model": "ballot.governmentalunit",
+  "fields": {
+    "updated_on": "2014-10-26T12:56:31.561Z",
+    "name": "Paradise Township",
+    "created_on": "2014-10-26T12:56:31.559Z",
+    "unit_level": 1
+  },
+  "pk": 12
+},
+{
+  "model": "ballot.governmentalunit",
+  "fields": {
+    "updated_on": "2014-10-26T12:56:50.278Z",
+    "name": "Peninsula Township",
+    "created_on": "2014-10-26T12:56:50.275Z",
+    "unit_level": 1
+  },
+  "pk": 13
+},
+{
+  "model": "ballot.governmentalunit",
+  "fields": {
+    "updated_on": "2014-10-26T12:57:04.804Z",
+    "name": "Traverse City",
+    "created_on": "2014-10-26T12:57:04.802Z",
+    "unit_level": 3
+  },
+  "pk": 14
+},
+{
+  "model": "ballot.governmentalunit",
+  "fields": {
+    "updated_on": "2014-10-26T12:57:17.201Z",
+    "name": "Union Township",
+    "created_on": "2014-10-26T12:57:17.198Z",
+    "unit_level": 1
+  },
+  "pk": 15
+},
+{
+  "model": "ballot.governmentalunit",
+  "fields": {
+    "updated_on": "2014-10-26T12:57:25.971Z",
+    "name": "Whitewater Township",
+    "created_on": "2014-10-26T12:57:25.969Z",
+    "unit_level": 1
+  },
+  "pk": 16
+},
+{
+  "model": "ballot.governmentalunit",
+  "fields": {
+    "updated_on": "2014-10-26T13:27:39.860Z",
+    "name": "Grand Traverse County",
+    "created_on": "2014-10-26T13:27:39.858Z",
+    "unit_level": 4
+  },
+  "pk": 17
+},
+{
+  "model": "ballot.governmentalunit",
+  "fields": {
+    "updated_on": "2014-10-26T13:41:50.043Z",
+    "name": "State of Michigan",
+    "created_on": "2014-10-26T13:41:50.041Z",
+    "unit_level": 5
+  },
+  "pk": 18
+},
+{
+  "model": "ballot.governmentalunit",
+  "fields": {
+    "updated_on": "2014-10-26T13:42:01.905Z",
+    "name": "United States of America",
+    "created_on": "2014-10-26T13:42:01.903Z",
+    "unit_level": 6
+  },
+  "pk": 19
+},
+{
+  "model": "ballot.governmentalunit",
+  "fields": {
+    "updated_on": "2014-10-26T14:04:12.400Z",
+    "name": "Northwestern Michigan College",
+    "created_on": "2014-10-26T14:04:12.398Z",
+    "unit_level": 7
+  },
+  "pk": 20
+},
+{
+  "model": "ballot.precinctarea",
+  "fields": {
+    "updated_on": "2014-10-26T13:00:54.076Z",
+    "name": "Traverse City",
+    "created_on": "2014-10-26T13:00:54.075Z",
+    "code": "TC"
+  },
+  "pk": 2
+},
+{
+  "model": "ballot.precinctarea",
+  "fields": {
+    "updated_on": "2014-10-26T13:38:02.382Z",
+    "name": "Acme",
+    "created_on": "2014-10-26T13:01:07.545Z",
+    "code": "AC"
+  },
+  "pk": 3
+},
+{
+  "model": "ballot.precinctarea",
+  "fields": {
+    "updated_on": "2014-10-26T13:38:06.720Z",
+    "name": "Blair",
+    "created_on": "2014-10-26T13:01:13.271Z",
+    "code": "BL"
+  },
+  "pk": 4
+},
+{
+  "model": "ballot.precinctarea",
+  "fields": {
+    "updated_on": "2014-10-26T13:01:25.916Z",
+    "name": "East Bay",
+    "created_on": "2014-10-26T13:01:25.916Z",
+    "code": "EB"
+  },
+  "pk": 5
+},
+{
+  "model": "ballot.precinctarea",
+  "fields": {
+    "updated_on": "2014-10-26T13:38:22.741Z",
+    "name": "Fife Lake",
+    "created_on": "2014-10-26T13:01:36.965Z",
+    "code": "FL"
+  },
+  "pk": 6
+},
+{
+  "model": "ballot.precinctarea",
+  "fields": {
+    "updated_on": "2014-10-26T13:38:28.411Z",
+    "name": "Garfield",
+    "created_on": "2014-10-26T13:01:47.904Z",
+    "code": "GA"
+  },
+  "pk": 7
+},
+{
+  "model": "ballot.precinctarea",
+  "fields": {
+    "updated_on": "2014-10-26T13:38:38.721Z",
+    "name": "Grant",
+    "created_on": "2014-10-26T13:02:13.709Z",
+    "code": "GR"
+  },
+  "pk": 8
+},
+{
+  "model": "ballot.precinctarea",
+  "fields": {
+    "updated_on": "2014-10-26T13:38:44.816Z",
+    "name": "Green Lake",
+    "created_on": "2014-10-26T13:02:19.164Z",
+    "code": "GL"
+  },
+  "pk": 9
+},
+{
+  "model": "ballot.precinctarea",
+  "fields": {
+    "updated_on": "2014-10-26T13:02:29.299Z",
+    "name": "Long Lake",
+    "created_on": "2014-10-26T13:02:29.299Z",
+    "code": "LL"
+  },
+  "pk": 10
+},
+{
+  "model": "ballot.precinctarea",
+  "fields": {
+    "updated_on": "2014-10-26T13:38:52.710Z",
+    "name": "Mayfield",
+    "created_on": "2014-10-26T13:02:35.595Z",
+    "code": "MA"
+  },
+  "pk": 11
+},
+{
+  "model": "ballot.precinctarea",
+  "fields": {
+    "updated_on": "2014-10-26T13:38:59.738Z",
+    "name": "Paradise",
+    "created_on": "2014-10-26T13:02:48.950Z",
+    "code": "PA"
+  },
+  "pk": 12
+},
+{
+  "model": "ballot.precinctarea",
+  "fields": {
+    "updated_on": "2014-10-26T13:39:04.068Z",
+    "name": "Peninsula",
+    "created_on": "2014-10-26T13:02:55.347Z",
+    "code": "PE"
+  },
+  "pk": 13
+},
+{
+  "model": "ballot.precinctarea",
+  "fields": {
+    "updated_on": "2014-10-26T13:39:20.522Z",
+    "name": "Union",
+    "created_on": "2014-10-26T13:03:05.618Z",
+    "code": "UN"
+  },
+  "pk": 14
+},
+{
+  "model": "ballot.precinctarea",
+  "fields": {
+    "updated_on": "2014-10-26T13:03:12.165Z",
+    "name": "Whitewater",
+    "created_on": "2014-10-26T13:03:12.164Z",
+    "code": "WW"
+  },
+  "pk": 15
+},
+{
+  "model": "ballot.election",
+  "fields": {
+    "updated_on": "2014-10-26T13:03:47.880Z",
+    "name": "General 2014",
+    "created_on": "2014-10-24T00:36:09.118Z",
+    "election_date": "2014-11-04"
+  },
+  "pk": 1
+},
+{
+  "model": "ballot.precinct",
+  "fields": {
+    "updated_on": "2014-10-26T13:04:53.006Z",
+    "polling_location": "Fire Station, 500 W. Front St. ",
+    "created_on": "2014-10-26T13:04:53.003Z",
+    "prec_area": 2,
+    "prec_number": "1"
+  },
+  "pk": 1
+},
+{
+  "model": "ballot.precinct",
+  "fields": {
+    "updated_on": "2014-10-26T13:05:10.728Z",
+    "polling_location": "G.T. Heritage Center, 322 Sixth St. ",
+    "created_on": "2014-10-26T13:05:10.727Z",
+    "prec_area": 2,
+    "prec_number": "3"
+  },
+  "pk": 2
+},
+{
+  "model": "ballot.precinct",
+  "fields": {
+    "updated_on": "2014-10-26T13:05:38.770Z",
+    "polling_location": "Traverse City Housing Comm, 10200 E. Carter Centre   (LEELANAU COUNTY)",
+    "created_on": "2014-10-26T13:05:38.769Z",
+    "prec_area": 2,
+    "prec_number": "4"
+  },
+  "pk": 3
+},
+{
+  "model": "ballot.precinct",
+  "fields": {
+    "updated_on": "2014-10-26T13:05:59.347Z",
+    "polling_location": "Traverse Heights School, 933 Rose St.",
+    "created_on": "2014-10-26T13:05:59.344Z",
+    "prec_area": 2,
+    "prec_number": "7"
+  },
+  "pk": 4
+},
+{
+  "model": "ballot.precinct",
+  "fields": {
+    "updated_on": "2014-10-26T13:06:31.147Z",
+    "polling_location": "Civic Center, 1125 W. Civic Center Dr. ",
+    "created_on": "2014-10-26T13:06:31.145Z",
+    "prec_area": 2,
+    "prec_number": "8"
+  },
+  "pk": 5
+},
+{
+  "model": "ballot.precinct",
+  "fields": {
+    "updated_on": "2014-10-26T13:06:42.579Z",
+    "polling_location": "Eastern School, 1600 Eastern Ave.",
+    "created_on": "2014-10-26T13:06:42.577Z",
+    "prec_area": 2,
+    "prec_number": "9"
+  },
+  "pk": 6
+},
+{
+  "model": "ballot.precinct",
+  "fields": {
+    "updated_on": "2014-10-26T13:07:04.665Z",
+    "polling_location": "Glenn Loomis School, 1009 S. Oak St. ",
+    "created_on": "2014-10-26T13:07:04.663Z",
+    "prec_area": 2,
+    "prec_number": "10"
+  },
+  "pk": 7
+},
+{
+  "model": "ballot.precinct",
+  "fields": {
+    "updated_on": "2014-10-26T13:07:44.928Z",
+    "polling_location": "Township Hall, 6042 Acme Rd., Acme",
+    "created_on": "2014-10-26T13:07:44.926Z",
+    "prec_area": 3,
+    "prec_number": "1"
+  },
+  "pk": 8
+},
+{
+  "model": "ballot.precinct",
+  "fields": {
+    "updated_on": "2014-10-26T13:07:57.533Z",
+    "polling_location": "Fire Station, 6042 Acme Rd., Acme",
+    "created_on": "2014-10-26T13:07:57.532Z",
+    "prec_area": 3,
+    "prec_number": "2"
+  },
+  "pk": 9
+},
+{
+  "model": "ballot.precinct",
+  "fields": {
+    "updated_on": "2014-10-26T13:08:19.602Z",
+    "polling_location": "Fire Station, 2121 County Road 633, Grawn",
+    "created_on": "2014-10-26T13:08:19.600Z",
+    "prec_area": 4,
+    "prec_number": "1"
+  },
+  "pk": 10
+},
+{
+  "model": "ballot.precinct",
+  "fields": {
+    "updated_on": "2014-10-26T13:08:26.664Z",
+    "polling_location": "Fire Station, 2121 County Road 633, Grawn",
+    "created_on": "2014-10-26T13:08:26.662Z",
+    "prec_area": 4,
+    "prec_number": "2"
+  },
+  "pk": 11
+},
+{
+  "model": "ballot.precinct",
+  "fields": {
+    "updated_on": "2014-10-26T13:08:33.127Z",
+    "polling_location": "Fire Station, 2121 County Road 633, Grawn",
+    "created_on": "2014-10-26T13:08:33.125Z",
+    "prec_area": 4,
+    "prec_number": "3"
+  },
+  "pk": 12
+},
+{
+  "model": "ballot.precinct",
+  "fields": {
+    "updated_on": "2014-10-26T13:08:56.938Z",
+    "polling_location": "Township Hall, 2121 County Road 633, Grawn",
+    "created_on": "2014-10-26T13:08:56.934Z",
+    "prec_area": 4,
+    "prec_number": "4"
+  },
+  "pk": 13
+},
+{
+  "model": "ballot.precinct",
+  "fields": {
+    "updated_on": "2014-10-26T13:09:15.632Z",
+    "polling_location": "Township Hall, 1965 N. Three Mile Rd.",
+    "created_on": "2014-10-26T13:09:15.631Z",
+    "prec_area": 5,
+    "prec_number": "1"
+  },
+  "pk": 14
+},
+{
+  "model": "ballot.precinct",
+  "fields": {
+    "updated_on": "2014-10-26T13:09:22.485Z",
+    "polling_location": "Township Hall, 1965 N. Three Mile Rd.",
+    "created_on": "2014-10-26T13:09:22.483Z",
+    "prec_area": 5,
+    "prec_number": "4"
+  },
+  "pk": 15
+},
+{
+  "model": "ballot.precinct",
+  "fields": {
+    "updated_on": "2014-10-26T13:09:39.877Z",
+    "polling_location": "Fire/Ambulance Station, 110 High Lake Rd",
+    "created_on": "2014-10-26T13:09:39.875Z",
+    "prec_area": 5,
+    "prec_number": "2"
+  },
+  "pk": 16
+},
+{
+  "model": "ballot.precinct",
+  "fields": {
+    "updated_on": "2014-10-26T13:09:46.145Z",
+    "polling_location": "Fire/Ambulance Station, 110 High Lake Rd",
+    "created_on": "2014-10-26T13:09:46.144Z",
+    "prec_area": 5,
+    "prec_number": "3"
+  },
+  "pk": 17
+},
+{
+  "model": "ballot.precinct",
+  "fields": {
+    "updated_on": "2014-10-26T13:10:02.932Z",
+    "polling_location": "Township Hall, 134 Morgan St., Fife Lake",
+    "created_on": "2014-10-26T13:10:02.930Z",
+    "prec_area": 6,
+    "prec_number": "1"
+  },
+  "pk": 18
+},
+{
+  "model": "ballot.precinct",
+  "fields": {
+    "updated_on": "2014-10-26T13:10:20.008Z",
+    "polling_location": "GT Metro Fire Station, 2025 East Silver Lake Rd. N.",
+    "created_on": "2014-10-26T13:10:20.005Z",
+    "prec_area": 7,
+    "prec_number": "1"
+  },
+  "pk": 19
+},
+{
+  "model": "ballot.precinct",
+  "fields": {
+    "updated_on": "2014-10-26T13:10:36.803Z",
+    "polling_location": "Township Hall, 3848 Veterans Dr. ",
+    "created_on": "2014-10-26T13:10:36.801Z",
+    "prec_area": 7,
+    "prec_number": "2"
+  },
+  "pk": 20
+},
+{
+  "model": "ballot.precinct",
+  "fields": {
+    "updated_on": "2014-10-26T13:10:51.152Z",
+    "polling_location": "Garfield Fire Hall, 3000 Albany St. ",
+    "created_on": "2014-10-26T13:10:51.150Z",
+    "prec_area": 7,
+    "prec_number": "3"
+  },
+  "pk": 21
+},
+{
+  "model": "ballot.precinct",
+  "fields": {
+    "updated_on": "2014-10-26T13:11:04.525Z",
+    "polling_location": "Public Service Bldg, 2650 LaFranier Rd. ",
+    "created_on": "2014-10-26T13:11:04.523Z",
+    "prec_area": 7,
+    "prec_number": "4"
+  },
+  "pk": 22
+},
+{
+  "model": "ballot.precinct",
+  "fields": {
+    "updated_on": "2014-10-26T13:11:20.611Z",
+    "polling_location": "First Christian Church, 3686 W. South Airport Rd.",
+    "created_on": "2014-10-26T13:11:20.609Z",
+    "prec_area": 7,
+    "prec_number": "5"
+  },
+  "pk": 23
+},
+{
+  "model": "ballot.precinct",
+  "fields": {
+    "updated_on": "2014-10-26T13:11:35.856Z",
+    "polling_location": "Road Commission, 1881 LaFranier Rd. ",
+    "created_on": "2014-10-26T13:11:35.855Z",
+    "prec_area": 7,
+    "prec_number": "6"
+  },
+  "pk": 24
+},
+{
+  "model": "ballot.precinct",
+  "fields": {
+    "updated_on": "2014-10-26T13:11:50.907Z",
+    "polling_location": "Township Hall, 8986 Davis Rd., Buckley ",
+    "created_on": "2014-10-26T13:11:50.903Z",
+    "prec_area": 8,
+    "prec_number": "1"
+  },
+  "pk": 25
+},
+{
+  "model": "ballot.precinct",
+  "fields": {
+    "updated_on": "2014-10-26T13:12:24.089Z",
+    "polling_location": "Township Hall, 9394 10th St., Interlochen ",
+    "created_on": "2014-10-26T13:12:24.087Z",
+    "prec_area": 9,
+    "prec_number": "1"
+  },
+  "pk": 26
+},
+{
+  "model": "ballot.precinct",
+  "fields": {
+    "updated_on": "2014-10-26T13:12:39.599Z",
+    "polling_location": "Interlochen Public Library, 9700 Riley Rd., Interlochen ",
+    "created_on": "2014-10-26T13:12:39.597Z",
+    "prec_area": 9,
+    "prec_number": "2"
+  },
+  "pk": 27
+},
+{
+  "model": "ballot.precinct",
+  "fields": {
+    "updated_on": "2014-10-26T13:12:54.370Z",
+    "polling_location": "Long Lake Elementary School, 7600 North Long Lake Rd. ",
+    "created_on": "2014-10-26T13:12:54.368Z",
+    "prec_area": 10,
+    "prec_number": "1"
+  },
+  "pk": 28
+},
+{
+  "model": "ballot.precinct",
+  "fields": {
+    "updated_on": "2014-10-26T13:13:20.950Z",
+    "polling_location": "Bay Pointe Church, 6880 Secor Rd",
+    "created_on": "2014-10-26T13:13:20.948Z",
+    "prec_area": 10,
+    "prec_number": "2"
+  },
+  "pk": 29
+},
+{
+  "model": "ballot.precinct",
+  "fields": {
+    "updated_on": "2014-10-26T13:13:29.743Z",
+    "polling_location": "Westwood Elementary School, 1500 Fisher Rd. ",
+    "created_on": "2014-10-26T13:13:29.741Z",
+    "prec_area": 10,
+    "prec_number": "3"
+  },
+  "pk": 30
+},
+{
+  "model": "ballot.precinct",
+  "fields": {
+    "updated_on": "2014-10-26T13:14:09.896Z",
+    "polling_location": "Township Hall, 2991 W. Center Rd., Kingsley",
+    "created_on": "2014-10-26T13:14:09.894Z",
+    "prec_area": 11,
+    "prec_number": "1"
+  },
+  "pk": 31
+},
+{
+  "model": "ballot.precinct",
+  "fields": {
+    "updated_on": "2014-10-26T13:14:27.141Z",
+    "polling_location": "Township Hall, 2300 E. M-113, Kingsley ",
+    "created_on": "2014-10-26T13:14:27.139Z",
+    "prec_area": 12,
+    "prec_number": "1"
+  },
+  "pk": 32
+},
+{
+  "model": "ballot.precinct",
+  "fields": {
+    "updated_on": "2014-10-26T13:14:35.762Z",
+    "polling_location": "Township Hall, 2300 E. M-113, Kingsley ",
+    "created_on": "2014-10-26T13:14:35.760Z",
+    "prec_area": 12,
+    "prec_number": "2"
+  },
+  "pk": 33
+},
+{
+  "model": "ballot.precinct",
+  "fields": {
+    "updated_on": "2014-10-26T13:14:52.360Z",
+    "polling_location": "Township Hall, 13235 Center Rd.",
+    "created_on": "2014-10-26T13:14:52.357Z",
+    "prec_area": 13,
+    "prec_number": "1"
+  },
+  "pk": 34
+},
+{
+  "model": "ballot.precinct",
+  "fields": {
+    "updated_on": "2014-10-26T13:15:09.910Z",
+    "polling_location": "Peninsula Fire Hall, 8150 Center Rd.",
+    "created_on": "2014-10-26T13:15:09.908Z",
+    "prec_area": 13,
+    "prec_number": "2"
+  },
+  "pk": 35
+},
+{
+  "model": "ballot.precinct",
+  "fields": {
+    "updated_on": "2014-10-26T13:15:27.530Z",
+    "polling_location": "Township Hall, 5020 Fife Lake Rd., Fife Lake",
+    "created_on": "2014-10-26T13:15:27.527Z",
+    "prec_area": 14,
+    "prec_number": "1"
+  },
+  "pk": 36
+},
+{
+  "model": "ballot.precinct",
+  "fields": {
+    "updated_on": "2014-10-26T13:15:44.358Z",
+    "polling_location": "Township Hall, 5777 Vinton Rd., Williamsburg ",
+    "created_on": "2014-10-26T13:15:44.355Z",
+    "prec_area": 15,
+    "prec_number": "1"
+  },
+  "pk": 37
+},
+{
+  "model": "ballot.district",
+  "fields": {
+    "updated_on": "2014-10-26T13:19:44.439Z",
+    "name": "Acme Township",
+    "created_on": "2014-10-24T00:37:22.634Z",
+    "govt_unit": 1,
+    "precints": [
+      8,
+      9
+    ]
+  },
+  "pk": 1
+},
+{
+  "model": "ballot.district",
+  "fields": {
+    "updated_on": "2014-10-26T13:20:11.722Z",
+    "name": "Blair Township",
+    "created_on": "2014-10-26T13:20:11.718Z",
+    "govt_unit": 2,
+    "precints": [
+      10,
+      11,
+      12,
+      13
+    ]
+  },
+  "pk": 2
+},
+{
+  "model": "ballot.district",
+  "fields": {
+    "updated_on": "2014-10-26T13:21:03.835Z",
+    "name": "East Bay Township",
+    "created_on": "2014-10-26T13:21:03.829Z",
+    "govt_unit": 3,
+    "precints": [
+      14,
+      16,
+      17,
+      15
+    ]
+  },
+  "pk": 3
+},
+{
+  "model": "ballot.district",
+  "fields": {
+    "updated_on": "2014-10-26T13:21:26.743Z",
+    "name": "Village of Fife Lake",
+    "created_on": "2014-10-26T13:21:26.739Z",
+    "govt_unit": 5,
+    "precints": [
+      18
+    ]
+  },
+  "pk": 4
+},
+{
+  "model": "ballot.district",
+  "fields": {
+    "updated_on": "2014-10-26T13:21:45.600Z",
+    "name": "Fife Lake Township",
+    "created_on": "2014-10-26T13:21:45.597Z",
+    "govt_unit": 4,
+    "precints": [
+      18
+    ]
+  },
+  "pk": 5
+},
+{
+  "model": "ballot.district",
+  "fields": {
+    "updated_on": "2014-10-26T13:22:06.284Z",
+    "name": "Garfield Township",
+    "created_on": "2014-10-26T13:22:06.280Z",
+    "govt_unit": 6,
+    "precints": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ]
+  },
+  "pk": 6
+},
+{
+  "model": "ballot.district",
+  "fields": {
+    "updated_on": "2014-10-26T13:22:45.289Z",
+    "name": "Grant Township",
+    "created_on": "2014-10-26T13:22:45.284Z",
+    "govt_unit": 8,
+    "precints": [
+      25
+    ]
+  },
+  "pk": 7
+},
+{
+  "model": "ballot.district",
+  "fields": {
+    "updated_on": "2014-10-26T13:23:08.979Z",
+    "name": "Green Lake Township",
+    "created_on": "2014-10-26T13:23:08.976Z",
+    "govt_unit": 7,
+    "precints": [
+      26,
+      27
+    ]
+  },
+  "pk": 8
+},
+{
+  "model": "ballot.district",
+  "fields": {
+    "updated_on": "2014-10-26T13:23:28.784Z",
+    "name": "Long Lake Township",
+    "created_on": "2014-10-26T13:23:28.772Z",
+    "govt_unit": 10,
+    "precints": [
+      28,
+      29,
+      30
+    ]
+  },
+  "pk": 9
+},
+{
+  "model": "ballot.district",
+  "fields": {
+    "updated_on": "2014-10-26T13:23:54.791Z",
+    "name": "Mayfield Township",
+    "created_on": "2014-10-26T13:23:54.787Z",
+    "govt_unit": 11,
+    "precints": [
+      31
+    ]
+  },
+  "pk": 10
+},
+{
+  "model": "ballot.district",
+  "fields": {
+    "updated_on": "2014-10-26T13:24:20.398Z",
+    "name": "Paradise Township",
+    "created_on": "2014-10-26T13:24:20.395Z",
+    "govt_unit": 12,
+    "precints": [
+      32,
+      33
+    ]
+  },
+  "pk": 11
+},
+{
+  "model": "ballot.district",
+  "fields": {
+    "updated_on": "2014-10-26T13:24:36.570Z",
+    "name": "Peninsula Township",
+    "created_on": "2014-10-26T13:24:36.567Z",
+    "govt_unit": 13,
+    "precints": [
+      34,
+      35
+    ]
+  },
+  "pk": 12
+},
+{
+  "model": "ballot.district",
+  "fields": {
+    "updated_on": "2014-10-26T13:24:52.680Z",
+    "name": "Union Township",
+    "created_on": "2014-10-26T13:24:52.677Z",
+    "govt_unit": 15,
+    "precints": [
+      36
+    ]
+  },
+  "pk": 13
+},
+{
+  "model": "ballot.district",
+  "fields": {
+    "updated_on": "2014-10-26T13:25:05.487Z",
+    "name": "Whitewater Township",
+    "created_on": "2014-10-26T13:25:05.482Z",
+    "govt_unit": 16,
+    "precints": [
+      37
+    ]
+  },
+  "pk": 14
+},
+{
+  "model": "ballot.district",
+  "fields": {
+    "updated_on": "2014-10-26T13:29:15.101Z",
+    "name": "County Commissioner District 1",
+    "created_on": "2014-10-26T13:29:15.096Z",
+    "govt_unit": 17,
+    "precints": [
+      34,
+      35,
+      4,
+      5,
+      6
+    ]
+  },
+  "pk": 15
+},
+{
+  "model": "ballot.district",
+  "fields": {
+    "updated_on": "2014-10-26T13:31:38.384Z",
+    "name": "County Commissioner District 2",
+    "created_on": "2014-10-26T13:29:58.545Z",
+    "govt_unit": 17,
+    "precints": [
+      21,
+      22,
+      1,
+      7,
+      2
+    ]
+  },
+  "pk": 16
+},
+{
+  "model": "ballot.district",
+  "fields": {
+    "updated_on": "2014-10-26T14:24:45.714Z",
+    "name": "County Commissioner District 3",
+    "created_on": "2014-10-26T13:32:32.873Z",
+    "govt_unit": 17,
+    "precints": [
+      12,
+      19,
+      20,
+      23,
+      24
+    ]
+  },
+  "pk": 17
+},
+{
+  "model": "ballot.district",
+  "fields": {
+    "updated_on": "2014-10-26T13:33:11.228Z",
+    "name": "County Commissioner District 4",
+    "created_on": "2014-10-26T13:33:11.224Z",
+    "govt_unit": 17,
+    "precints": [
+      27,
+      28,
+      29,
+      30
+    ]
+  },
+  "pk": 18
+},
+{
+  "model": "ballot.district",
+  "fields": {
+    "updated_on": "2014-10-26T13:34:07.736Z",
+    "name": "County Commissioner District 5",
+    "created_on": "2014-10-26T13:34:07.729Z",
+    "govt_unit": 17,
+    "precints": [
+      10,
+      11,
+      13,
+      25,
+      26,
+      31
+    ]
+  },
+  "pk": 19
+},
+{
+  "model": "ballot.district",
+  "fields": {
+    "updated_on": "2014-10-26T13:35:00.761Z",
+    "name": "County Commissioner District 6",
+    "created_on": "2014-10-26T13:35:00.757Z",
+    "govt_unit": 17,
+    "precints": [
+      8,
+      9,
+      14,
+      15,
+      37
+    ]
+  },
+  "pk": 20
+},
+{
+  "model": "ballot.district",
+  "fields": {
+    "updated_on": "2014-10-26T13:36:16.173Z",
+    "name": "County Commissioner District 7",
+    "created_on": "2014-10-26T13:36:16.169Z",
+    "govt_unit": 17,
+    "precints": [
+      16,
+      17,
+      18,
+      32,
+      33,
+      36
+    ]
+  },
+  "pk": 21
+},
+{
+  "model": "ballot.district",
+  "fields": {
+    "updated_on": "2014-10-26T13:42:36.183Z",
+    "name": "State of Michigan",
+    "created_on": "2014-10-26T13:42:36.173Z",
+    "govt_unit": 18,
+    "precints": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      16,
+      17,
+      15,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      1,
+      7,
+      2,
+      3,
+      4,
+      5,
+      6,
+      36,
+      37
+    ]
+  },
+  "pk": 22
+},
+{
+  "model": "ballot.district",
+  "fields": {
+    "updated_on": "2014-10-26T13:45:10.628Z",
+    "name": "State of Michigan (Federal)",
+    "created_on": "2014-10-26T13:45:10.619Z",
+    "govt_unit": 19,
+    "precints": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      16,
+      17,
+      15,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      1,
+      7,
+      2,
+      3,
+      4,
+      5,
+      6,
+      36,
+      37
+    ]
+  },
+  "pk": 23
+},
+{
+  "model": "ballot.district",
+  "fields": {
+    "updated_on": "2014-10-26T13:46:43.251Z",
+    "name": "1st Congressional District",
+    "created_on": "2014-10-26T13:46:43.242Z",
+    "govt_unit": 19,
+    "precints": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      16,
+      17,
+      15,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      1,
+      7,
+      2,
+      3,
+      4,
+      5,
+      6,
+      36,
+      37
+    ]
+  },
+  "pk": 24
+},
+{
+  "model": "ballot.district",
+  "fields": {
+    "updated_on": "2014-10-26T13:48:56.185Z",
+    "name": "37th State Senator District",
+    "created_on": "2014-10-26T13:48:56.177Z",
+    "govt_unit": 18,
+    "precints": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      16,
+      17,
+      15,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      1,
+      7,
+      2,
+      3,
+      4,
+      5,
+      6,
+      36,
+      37
+    ]
+  },
+  "pk": 25
+},
+{
+  "model": "ballot.district",
+  "fields": {
+    "updated_on": "2014-10-26T13:49:39.193Z",
+    "name": "104th State Representative District",
+    "created_on": "2014-10-26T13:49:39.185Z",
+    "govt_unit": 18,
+    "precints": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      16,
+      17,
+      15,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      1,
+      7,
+      2,
+      3,
+      4,
+      5,
+      6,
+      36,
+      37
+    ]
+  },
+  "pk": 26
+},
+{
+  "model": "ballot.district",
+  "fields": {
+    "updated_on": "2014-10-26T14:01:48.254Z",
+    "name": "Court of Appeals District IV",
+    "created_on": "2014-10-26T14:01:48.244Z",
+    "govt_unit": 18,
+    "precints": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      16,
+      17,
+      15,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      1,
+      7,
+      2,
+      3,
+      4,
+      5,
+      6,
+      36,
+      37
+    ]
+  },
+  "pk": 27
+},
+{
+  "model": "ballot.district",
+  "fields": {
+    "updated_on": "2014-10-26T14:02:45.645Z",
+    "name": "Circuit Court 13th District",
+    "created_on": "2014-10-26T14:02:45.636Z",
+    "govt_unit": 18,
+    "precints": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      16,
+      17,
+      15,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      1,
+      7,
+      2,
+      3,
+      4,
+      5,
+      6,
+      36,
+      37
+    ]
+  },
+  "pk": 28
+},
+{
+  "model": "ballot.district",
+  "fields": {
+    "updated_on": "2014-10-26T14:03:13.531Z",
+    "name": "District Court 86th District",
+    "created_on": "2014-10-26T14:03:13.524Z",
+    "govt_unit": 18,
+    "precints": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      16,
+      17,
+      15,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      1,
+      7,
+      2,
+      3,
+      4,
+      5,
+      6,
+      36,
+      37
+    ]
+  },
+  "pk": 29
+},
+{
+  "model": "ballot.district",
+  "fields": {
+    "updated_on": "2014-10-26T14:04:16.226Z",
+    "name": "Northwestern Michigan Collete",
+    "created_on": "2014-10-26T14:04:16.218Z",
+    "govt_unit": 20,
+    "precints": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      16,
+      17,
+      15,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      1,
+      7,
+      2,
+      3,
+      4,
+      5,
+      6,
+      36,
+      37
+    ]
+  },
+  "pk": 30
+},
+{
+  "model": "ballot.district",
+  "fields": {
+    "updated_on": "2014-10-26T14:05:53.979Z",
+    "name": "Village of Kingsley",
+    "created_on": "2014-10-26T14:05:53.973Z",
+    "govt_unit": 9,
+    "precints": [
+      32,
+      33
+    ]
+  },
+  "pk": 31
+},
+{
+  "model": "ballot.office",
+  "fields": {
+    "updated_on": "2014-10-26T13:43:24.595Z",
+    "name": "Governor",
+    "created_on": "2014-10-26T13:43:24.592Z",
+    "district": 22
+  },
+  "pk": 2
+},
+{
+  "model": "ballot.office",
+  "fields": {
+    "updated_on": "2014-10-26T13:43:34.392Z",
+    "name": "Secretary of State",
+    "created_on": "2014-10-26T13:43:34.390Z",
+    "district": 22
+  },
+  "pk": 3
+},
+{
+  "model": "ballot.office",
+  "fields": {
+    "updated_on": "2014-10-26T13:43:45.070Z",
+    "name": "Attorney General",
+    "created_on": "2014-10-26T13:43:45.068Z",
+    "district": 22
+  },
+  "pk": 4
+},
+{
+  "model": "ballot.office",
+  "fields": {
+    "updated_on": "2014-10-26T13:45:34.230Z",
+    "name": "United States Senator",
+    "created_on": "2014-10-26T13:44:25.789Z",
+    "district": 23
+  },
+  "pk": 5
+},
+{
+  "model": "ballot.office",
+  "fields": {
+    "updated_on": "2014-10-26T13:47:01.307Z",
+    "name": "Representative in Congress",
+    "created_on": "2014-10-26T13:47:01.306Z",
+    "district": 24
+  },
+  "pk": 6
+},
+{
+  "model": "ballot.office",
+  "fields": {
+    "updated_on": "2014-10-26T13:49:04.641Z",
+    "name": "State Senator",
+    "created_on": "2014-10-26T13:49:04.639Z",
+    "district": 25
+  },
+  "pk": 7
+},
+{
+  "model": "ballot.office",
+  "fields": {
+    "updated_on": "2014-10-26T13:49:56.704Z",
+    "name": "Representative in State Legislature",
+    "created_on": "2014-10-26T13:49:56.702Z",
+    "district": 26
+  },
+  "pk": 8
+},
+{
+  "model": "ballot.office",
+  "fields": {
+    "updated_on": "2014-10-26T13:50:24.905Z",
+    "name": "Member of the State Board of Education",
+    "created_on": "2014-10-26T13:50:24.903Z",
+    "district": 22
+  },
+  "pk": 9
+},
+{
+  "model": "ballot.office",
+  "fields": {
+    "updated_on": "2014-10-26T13:50:41.822Z",
+    "name": "Regent of the University of Michigan",
+    "created_on": "2014-10-26T13:50:41.821Z",
+    "district": 22
+  },
+  "pk": 10
+},
+{
+  "model": "ballot.office",
+  "fields": {
+    "updated_on": "2014-10-26T13:51:07.786Z",
+    "name": "Trustee of Michigan State University",
+    "created_on": "2014-10-26T13:51:07.785Z",
+    "district": 22
+  },
+  "pk": 11
+},
+{
+  "model": "ballot.office",
+  "fields": {
+    "updated_on": "2014-10-26T13:51:33.941Z",
+    "name": "Governor of Wayne Statue University",
+    "created_on": "2014-10-26T13:51:33.939Z",
+    "district": 22
+  },
+  "pk": 12
+},
+{
+  "model": "ballot.office",
+  "fields": {
+    "updated_on": "2014-10-26T13:52:04.818Z",
+    "name": "County Commissioner",
+    "created_on": "2014-10-26T13:52:04.816Z",
+    "district": 15
+  },
+  "pk": 13
+},
+{
+  "model": "ballot.office",
+  "fields": {
+    "updated_on": "2014-10-26T13:52:15.815Z",
+    "name": "County Commissioner",
+    "created_on": "2014-10-26T13:52:15.813Z",
+    "district": 16
+  },
+  "pk": 14
+},
+{
+  "model": "ballot.office",
+  "fields": {
+    "updated_on": "2014-10-26T13:52:24.933Z",
+    "name": "County Commissioner",
+    "created_on": "2014-10-26T13:52:24.930Z",
+    "district": 17
+  },
+  "pk": 15
+},
+{
+  "model": "ballot.office",
+  "fields": {
+    "updated_on": "2014-10-26T13:52:34.372Z",
+    "name": "County Commissioner",
+    "created_on": "2014-10-26T13:52:34.370Z",
+    "district": 18
+  },
+  "pk": 16
+},
+{
+  "model": "ballot.office",
+  "fields": {
+    "updated_on": "2014-10-26T13:52:43.147Z",
+    "name": "County Commissioner",
+    "created_on": "2014-10-26T13:52:43.145Z",
+    "district": 19
+  },
+  "pk": 17
+},
+{
+  "model": "ballot.office",
+  "fields": {
+    "updated_on": "2014-10-26T13:52:51.722Z",
+    "name": "County Commissioner",
+    "created_on": "2014-10-26T13:52:51.720Z",
+    "district": 20
+  },
+  "pk": 18
+},
+{
+  "model": "ballot.office",
+  "fields": {
+    "updated_on": "2014-10-26T13:53:02.430Z",
+    "name": "County Commissioner",
+    "created_on": "2014-10-26T13:53:02.428Z",
+    "district": 21
+  },
+  "pk": 19
+},
+{
+  "model": "ballot.office",
+  "fields": {
+    "updated_on": "2014-10-26T13:53:20.227Z",
+    "name": "Clerk",
+    "created_on": "2014-10-26T13:53:20.225Z",
+    "district": 1
+  },
+  "pk": 20
+},
+{
+  "model": "ballot.office",
+  "fields": {
+    "updated_on": "2014-10-26T13:53:31.080Z",
+    "name": "Treasurer",
+    "created_on": "2014-10-26T13:53:31.078Z",
+    "district": 1
+  },
+  "pk": 21
+},
+{
+  "model": "ballot.office",
+  "fields": {
+    "updated_on": "2014-10-26T13:53:42.999Z",
+    "name": "Park Commissioner",
+    "created_on": "2014-10-26T13:53:42.997Z",
+    "district": 3
+  },
+  "pk": 22
+},
+{
+  "model": "ballot.office",
+  "fields": {
+    "updated_on": "2014-10-26T13:53:58.236Z",
+    "name": "Clerk",
+    "created_on": "2014-10-26T13:53:58.234Z",
+    "district": 8
+  },
+  "pk": 23
+},
+{
+  "model": "ballot.office",
+  "fields": {
+    "updated_on": "2014-10-26T13:54:09.738Z",
+    "name": "Supervisor",
+    "created_on": "2014-10-26T13:54:09.736Z",
+    "district": 12
+  },
+  "pk": 24
+},
+{
+  "model": "ballot.office",
+  "fields": {
+    "updated_on": "2014-10-26T13:54:22.047Z",
+    "name": "Trustee",
+    "created_on": "2014-10-26T13:54:22.046Z",
+    "district": 13
+  },
+  "pk": 25
+},
+{
+  "model": "ballot.office",
+  "fields": {
+    "updated_on": "2014-10-26T13:54:33.960Z",
+    "name": "Library Board Director",
+    "created_on": "2014-10-26T13:54:33.957Z",
+    "district": 5
+  },
+  "pk": 26
+},
+{
+  "model": "ballot.office",
+  "fields": {
+    "updated_on": "2014-10-26T13:54:55.045Z",
+    "name": "Library Board Director",
+    "created_on": "2014-10-26T13:54:55.043Z",
+    "district": 12
+  },
+  "pk": 27
+},
+{
+  "model": "ballot.office",
+  "fields": {
+    "updated_on": "2014-10-26T13:56:57.378Z",
+    "name": "Justice of Supreme Court",
+    "created_on": "2014-10-26T13:56:57.376Z",
+    "district": 22
+  },
+  "pk": 28
+},
+{
+  "model": "ballot.office",
+  "fields": {
+    "updated_on": "2014-10-26T13:57:18.258Z",
+    "name": "Justice of Supreme Court - Incumbent Position",
+    "created_on": "2014-10-26T13:57:18.256Z",
+    "district": 22
+  },
+  "pk": 29
+},
+{
+  "model": "ballot.office",
+  "fields": {
+    "updated_on": "2014-10-26T14:02:17.460Z",
+    "name": "Judge of Court of Appeals",
+    "created_on": "2014-10-26T14:02:17.458Z",
+    "district": 27
+  },
+  "pk": 30
+},
+{
+  "model": "ballot.office",
+  "fields": {
+    "updated_on": "2014-10-26T14:03:30.467Z",
+    "name": "District Court Judge",
+    "created_on": "2014-10-26T14:03:30.464Z",
+    "district": 29
+  },
+  "pk": 31
+},
+{
+  "model": "ballot.office",
+  "fields": {
+    "updated_on": "2014-10-26T14:04:37.093Z",
+    "name": "Trustee of Northwestern Michigan College",
+    "created_on": "2014-10-26T14:04:37.091Z",
+    "district": 30
+  },
+  "pk": 32
+},
+{
+  "model": "ballot.office",
+  "fields": {
+    "updated_on": "2014-10-26T14:04:55.445Z",
+    "name": "President",
+    "created_on": "2014-10-26T14:04:55.441Z",
+    "district": 4
+  },
+  "pk": 33
+},
+{
+  "model": "ballot.office",
+  "fields": {
+    "updated_on": "2014-10-26T14:06:00.910Z",
+    "name": "President",
+    "created_on": "2014-10-26T14:06:00.909Z",
+    "district": 31
+  },
+  "pk": 34
+},
+{
+  "model": "ballot.office",
+  "fields": {
+    "updated_on": "2014-10-26T14:06:57.773Z",
+    "name": "Treasurer",
+    "created_on": "2014-10-26T14:06:57.770Z",
+    "district": 4
+  },
+  "pk": 35
+},
+{
+  "model": "ballot.office",
+  "fields": {
+    "updated_on": "2014-10-26T14:07:34.250Z",
+    "name": "Trustee (2yr)",
+    "created_on": "2014-10-26T14:07:06.099Z",
+    "district": 4
+  },
+  "pk": 36
+},
+{
+  "model": "ballot.office",
+  "fields": {
+    "updated_on": "2014-10-26T14:07:46.541Z",
+    "name": "Trustee (4yr)",
+    "created_on": "2014-10-26T14:07:46.539Z",
+    "district": 4
+  },
+  "pk": 37
+},
+{
+  "model": "ballot.office",
+  "fields": {
+    "updated_on": "2014-10-26T14:08:07.979Z",
+    "name": "Trustee",
+    "created_on": "2014-10-26T14:08:07.977Z",
+    "district": 31
+  },
+  "pk": 38
+},
+{
+  "model": "ballot.race",
+  "fields": {
+    "updated_on": "2014-10-26T14:08:54.980Z",
+    "votes_allowed": 1,
+    "created_on": "2014-10-26T14:08:54.976Z",
+    "election": 1,
+    "office": 2
+  },
+  "pk": 2
+},
+{
+  "model": "ballot.race",
+  "fields": {
+    "updated_on": "2014-10-26T14:09:04.658Z",
+    "votes_allowed": 1,
+    "created_on": "2014-10-26T14:09:04.654Z",
+    "election": 1,
+    "office": 3
+  },
+  "pk": 3
+},
+{
+  "model": "ballot.race",
+  "fields": {
+    "updated_on": "2014-10-26T14:09:13.378Z",
+    "votes_allowed": 1,
+    "created_on": "2014-10-26T14:09:13.374Z",
+    "election": 1,
+    "office": 4
+  },
+  "pk": 4
+},
+{
+  "model": "ballot.race",
+  "fields": {
+    "updated_on": "2014-10-26T14:09:53.460Z",
+    "votes_allowed": 1,
+    "created_on": "2014-10-26T14:09:53.455Z",
+    "election": 1,
+    "office": 5
+  },
+  "pk": 5
+},
+{
+  "model": "ballot.race",
+  "fields": {
+    "updated_on": "2014-10-26T14:10:27.462Z",
+    "votes_allowed": 1,
+    "created_on": "2014-10-26T14:10:27.458Z",
+    "election": 1,
+    "office": 6
+  },
+  "pk": 6
+},
+{
+  "model": "ballot.race",
+  "fields": {
+    "updated_on": "2014-10-26T14:10:42.354Z",
+    "votes_allowed": 1,
+    "created_on": "2014-10-26T14:10:42.350Z",
+    "election": 1,
+    "office": 7
+  },
+  "pk": 7
+},
+{
+  "model": "ballot.race",
+  "fields": {
+    "updated_on": "2014-10-26T14:10:52.070Z",
+    "votes_allowed": 1,
+    "created_on": "2014-10-26T14:10:52.067Z",
+    "election": 1,
+    "office": 8
+  },
+  "pk": 8
+},
+{
+  "model": "ballot.race",
+  "fields": {
+    "updated_on": "2014-10-26T14:11:26.954Z",
+    "votes_allowed": 2,
+    "created_on": "2014-10-26T14:11:13.744Z",
+    "election": 1,
+    "office": 9
+  },
+  "pk": 9
+},
+{
+  "model": "ballot.race",
+  "fields": {
+    "updated_on": "2014-10-26T14:11:53.108Z",
+    "votes_allowed": 2,
+    "created_on": "2014-10-26T14:11:53.104Z",
+    "election": 1,
+    "office": 10
+  },
+  "pk": 10
+},
+{
+  "model": "ballot.race",
+  "fields": {
+    "updated_on": "2014-10-26T14:12:06.043Z",
+    "votes_allowed": 2,
+    "created_on": "2014-10-26T14:12:06.040Z",
+    "election": 1,
+    "office": 11
+  },
+  "pk": 11
+},
+{
+  "model": "ballot.candidate",
+  "fields": {
+    "updated_on": "2014-10-26T14:13:38.052Z",
+    "name": "Rick Snyder",
+    "race": 2,
+    "created_on": "2014-10-26T14:13:38.049Z",
+    "url": "",
+    "ticket_mate": "Brian Nelson Calley ",
+    "incumbent": true,
+    "party": 1
+  },
+  "pk": 2
+},
+{
+  "model": "ballot.candidate",
+  "fields": {
+    "updated_on": "2014-10-26T14:14:07.941Z",
+    "name": "Mark Schauer",
+    "race": 2,
+    "created_on": "2014-10-26T14:14:07.937Z",
+    "url": "",
+    "ticket_mate": "Lisa Brown",
+    "incumbent": false,
+    "party": 2
+  },
+  "pk": 3
+},
+{
+  "model": "ballot.candidate",
+  "fields": {
+    "updated_on": "2014-10-26T14:14:40.599Z",
+    "name": "Mary Buzuma",
+    "race": 2,
+    "created_on": "2014-10-26T14:14:40.593Z",
+    "url": "",
+    "ticket_mate": "Scotty Boman",
+    "incumbent": false,
+    "party": 3
+  },
+  "pk": 4
+},
+{
+  "model": "ballot.candidate",
+  "fields": {
+    "updated_on": "2014-10-26T14:17:14.255Z",
+    "name": "Mark McFarlin",
+    "race": 2,
+    "created_on": "2014-10-26T14:17:14.252Z",
+    "url": "",
+    "ticket_mate": "Richard Mendoza",
+    "incumbent": false,
+    "party": 6
+  },
+  "pk": 5
+},
+{
+  "model": "ballot.candidate",
+  "fields": {
+    "updated_on": "2014-10-26T14:17:54.732Z",
+    "name": "Paul Homeniuk",
+    "race": 2,
+    "created_on": "2014-10-26T14:17:54.729Z",
+    "url": "",
+    "ticket_mate": "Candace R. Caveny",
+    "incumbent": false,
+    "party": 4
+  },
+  "pk": 6
+}
+]

@@ -96,7 +96,6 @@ class PrecinctArea(ModelBase): # (Collection of precincts)
 	class Meta:
 		ordering = ["name"]
 		permissions = (('view_muni', "View Municipality"),)
-		verbose_name_plural = "Municipalities"
 	
 	class Admin:
 		pass
@@ -135,7 +134,7 @@ class Precinct(ModelBase):
 	polling_location = models.CharField(max_length=100,blank=False,null=False)
 
 	def __str__(self):
-		return self.prec_area.code + ' ' + self.prec_number
+		return self.prec_area.code + self.prec_number
 
 	@property
 	def allow_delete(self):
