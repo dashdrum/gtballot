@@ -78,7 +78,7 @@ class GovernmentalUnit(ModelBase):
 
 
 @python_2_unicode_compatible
-class Municipality(ModelBase): # (Name of a precinct)
+class PrecinctArea(ModelBase): # (Collection of precincts)
 	name = models.CharField(max_length=100,blank=False,null=False)
 	code = models.CharField(max_length=3,blank=False,null=False)
 
@@ -88,7 +88,7 @@ class Municipality(ModelBase): # (Name of a precinct)
 	@property
 	def allow_delete(self):
 		''' any Precincts linked ? '''
-		if len(Municipality.objects.get(id=self.id).precinct_set.all()) == 0 :
+		if len(PrecinctArea.objects.get(id=self.id).precinct_set.all()) == 0 :
 			return True
 		else:
 			return False
@@ -130,12 +130,12 @@ class Election(ModelBase):
 
 @python_2_unicode_compatible
 class Precinct(ModelBase):
-	municipality = models.ForeignKey(Municipality,blank=False,null=False)
+	prec_area = models.ForeignKey(PrecinctArea,blank=False,null=False)
 	prec_number = models.CharField(max_length=2,blank=False,null=False)
 	polling_location = models.CharField(max_length=100,blank=False,null=False)
 
 	def __str__(self):
-		return self.municipality.code + ' ' + self.prec_number
+		return self.prec_area.code + ' ' + self.prec_number
 
 	@property
 	def allow_delete(self):
@@ -146,7 +146,7 @@ class Precinct(ModelBase):
 			return False
 
 	class Meta:
-		ordering = ["municipality","prec_number"]
+		ordering = ["prec_area","prec_number"]
 		permissions = (('view_precinct', "View Precinct"),)
 	
 	class Admin:

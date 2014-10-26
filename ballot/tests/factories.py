@@ -6,7 +6,7 @@ try:
 except ImportError:
     from datetime.datetime import now
 
-from ballot.models import (Party, UnitLevel, GovernmentalUnit, Municipality, 
+from ballot.models import (Party, UnitLevel, GovernmentalUnit, PrecinctArea, 
                            Election, Precinct, Race, District, Proposal, 
                            Office, Candidate)
 
@@ -29,11 +29,11 @@ class GovernmentalUnitFactory(factory.DjangoModelFactory):
     unit_level = factory.SubFactory(UnitLevelFactory)
     
 
-class MunicipalityFactory(factory.DjangoModelFactory):
-    FACTORY_FOR = Municipality
+class PrecinctAreaFactory(factory.DjangoModelFactory):
+    FACTORY_FOR = PrecinctArea
 
     code = factory.Sequence(lambda n:  n, str)
-    name = factory.Sequence(lambda n: 'Municipality' + n, str)
+    name = factory.Sequence(lambda n: 'PrecinctArea ' + n, str)
     
 
 class ElectionFactory(factory.DjangoModelFactory):
@@ -45,7 +45,7 @@ class ElectionFactory(factory.DjangoModelFactory):
 class PrecinctFactory(factory.DjangoModelFactory):
     FACTORY_FOR = Precinct
 
-    municipality = factory.SubFactory(MunicipalityFactory)
+    prec_area = factory.SubFactory(PrecinctAreaFactory)
     prec_number = factory.Sequence(lambda n: n, str)
     polling_location = factory.Sequence(lambda n: "Location " + n, str)
 

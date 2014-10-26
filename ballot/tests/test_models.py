@@ -8,7 +8,7 @@ from datetime import datetime, timedelta
 
     
 from .factories import (PartyFactory, UnitLevelFactory, GovernmentalUnitFactory, 
-	                    MunicipalityFactory, ElectionFactory, PrecinctFactory, 
+	                    PrecinctAreaFactory, ElectionFactory, PrecinctFactory, 
 	                    DistrictFactory, OfficeFactory, RaceFactory, 
 	                    CandidateFactory, ProposalFactory)
 
@@ -57,18 +57,18 @@ class TestGovernmentalUnitModel(BallotTestCase):
         d = DistrictFactory.create(govt_unit=g)
         self.assertFalse(g.allow_delete)
 
-class TestMunicipalityModel(BallotTestCase):
+class TestPrecinctAreaModel(BallotTestCase):
 
     def test_str_value(self):
-        m = MunicipalityFactory.create()
-        self.assertEqual(m.__str__(), m.name)
+        pa = PrecinctAreaFactory.create()
+        self.assertEqual(pa.__str__(), pa.name)
         
     def test_allow_delete(self):
-        m = MunicipalityFactory.create()
-        self.assertTrue(m.allow_delete)
+        pa = PrecinctAreaFactory.create()
+        self.assertTrue(pa.allow_delete)
 
-        pr = PrecinctFactory.create(municipality=m)
-        self.assertFalse(m.allow_delete)
+        pr = PrecinctFactory.create(prec_area=pa)
+        self.assertFalse(pa.allow_delete)
 
 class TestElectionModel(BallotTestCase):
 
@@ -91,7 +91,7 @@ class TestPrecinctModel(BallotTestCase):
 
     def test_str_value(self):
         pr = PrecinctFactory.create()
-        self.assertEqual(pr.__str__(), pr.municipality.code + ' ' + pr.prec_number)
+        self.assertEqual(pr.__str__(), pr.prec_area.code + ' ' + pr.prec_number)
         
     def test_allow_delete(self):
         pr = PrecinctFactory.create()
