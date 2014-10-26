@@ -1,0 +1,16 @@
+<html>
+<head>
+<title>Precinct List</title>
+</head>
+<body>
+<h1>Precinct List</h1>
+{% regroup object_list by prec_area as area_prec %}
+{% for pa in area_prec %}
+<h3>{{ pa.grouper.name}}</h3>
+{% for pr in pa.list %}
+<p>{{ pr.prec_area.code }}{{ pr.prec_number}} {{ pr.polling_location }}</p>
+{% endfor %}
+{% endfor %}
+</body>
+</html>
+
