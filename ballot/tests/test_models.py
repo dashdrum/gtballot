@@ -91,7 +91,7 @@ class TestPrecinctModel(BallotTestCase):
 
     def test_str_value(self):
         pr = PrecinctFactory.create()
-        self.assertEqual(pr.__str__(), pr.prec_area.code + ' ' + pr.prec_number)
+        self.assertEqual(pr.__str__(), pr.prec_area.code + pr.prec_number)
         
     def test_allow_delete(self):
         pr = PrecinctFactory.create()

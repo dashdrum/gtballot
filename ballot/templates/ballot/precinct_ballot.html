@@ -1,0 +1,20 @@
+<html>
+<head>
+<title>Precinct Ballot</title>
+</head>
+<body>
+<h1>Precinct Ballot</h1>
+{% regroup object_list by race.office.district as district_list %}
+{% for d in district_list %}
+<h2>District: {{ d.grouper.name }}</h2>
+{% regroup d.list by race.office as office_list %}
+{% for o in office_list %}
+<h3>Office: {{ o.grouper.name }}</h3>
+{% for c in o.list %}
+<p>{{ c.name }}</p>
+{% endfor %}
+{% endfor %}
+{% endfor %}
+</body>
+</html>
+
