@@ -9,6 +9,7 @@ from snips.models import ModelBase
 class Party(ModelBase):
 	code = models.CharField(max_length=3,blank=False,null=False)
 	name = models.CharField(max_length=100,blank=False,null=False)
+	sort_order = models.IntegerField(blank=True,null=True)
 
 	def __str__(self):
 		return self.name
@@ -22,7 +23,7 @@ class Party(ModelBase):
 			return False
 
 	class Meta:
-		ordering = ["name"]
+		ordering = ["sort_order","name"]
 		permissions = (('view_party', "View Party"),)
 		verbose_name_plural = "parties"
 	
@@ -33,6 +34,7 @@ class Party(ModelBase):
 class UnitLevel(ModelBase): # (Federal, State, City, Township, Village, School, etc.)
 	name = models.CharField(max_length=100,blank=False,null=False)
 	code = models.CharField(max_length=3,blank=False,null=False)
+	sort_order = models.IntegerField(blank=True,null=True)
 
 	def __str__(self):
 		return self.name
@@ -46,7 +48,7 @@ class UnitLevel(ModelBase): # (Federal, State, City, Township, Village, School, 
 			return False
 
 	class Meta:
-		ordering = ["name"]
+		ordering = ["sort_order","name"]
 		permissions = (('view_level', "View Unit Level"),)
 	
 	class Admin:
@@ -57,6 +59,7 @@ class UnitLevel(ModelBase): # (Federal, State, City, Township, Village, School, 
 class GovernmentalUnit(ModelBase):
 	name = models.CharField(max_length=100,blank=False,null=False)
 	unit_level = models.ForeignKey(UnitLevel,blank=False,null=False)
+	sort_order = models.IntegerField(blank=True,null=True)
 
 	def __str__(self):
 		return self.name
@@ -70,7 +73,7 @@ class GovernmentalUnit(ModelBase):
 			return False
 
 	class Meta:
-		ordering = ["name"]
+		ordering = ["sort_order","name"]
 		permissions = (('view_unit', "View Governmental Unit"),)
 	
 	class Admin:
@@ -81,6 +84,7 @@ class GovernmentalUnit(ModelBase):
 class PrecinctArea(ModelBase): # (Collection of precincts)
 	name = models.CharField(max_length=100,blank=False,null=False)
 	code = models.CharField(max_length=3,blank=False,null=False)
+	sort_order = models.IntegerField(blank=True,null=True)
 
 	def __str__(self):
 		return self.name
@@ -94,7 +98,7 @@ class PrecinctArea(ModelBase): # (Collection of precincts)
 			return False
 
 	class Meta:
-		ordering = ["name"]
+		ordering = ["sort_order","name"]
 		permissions = (('view_muni', "View Municipality"),)
 	
 	class Admin:
@@ -107,6 +111,7 @@ class PrecinctArea(ModelBase): # (Collection of precincts)
 class Election(ModelBase):
 	name = models.CharField(max_length=100,blank=False,null=False)
 	election_date = models.DateField(blank=False,null=False)
+	sort_order = models.IntegerField(blank=True,null=True)
 
 	def __str__(self):
 		return self.name
@@ -120,7 +125,7 @@ class Election(ModelBase):
 			return False
 
 	class Meta:
-		ordering = ["election_date"]
+		ordering = ["sort_order","election_date"]
 		permissions = (('view_election', "View Election"),)
 	
 	class Admin:
@@ -132,6 +137,7 @@ class Precinct(ModelBase):
 	prec_area = models.ForeignKey(PrecinctArea,blank=False,null=False)
 	prec_number = models.CharField(max_length=2,blank=False,null=False)
 	polling_location = models.CharField(max_length=100,blank=False,null=False)
+	sort_order = models.IntegerField(blank=True,null=True)
 
 	def __str__(self):
 		return self.prec_area.code + self.prec_number
@@ -145,7 +151,7 @@ class Precinct(ModelBase):
 			return False
 
 	class Meta:
-		ordering = ["prec_area","prec_number"]
+		ordering = ["sort_order","prec_area","prec_number"]
 		permissions = (('view_precinct', "View Precinct"),)
 	
 	class Admin:
@@ -157,6 +163,7 @@ class District(ModelBase):
 	name = models.CharField(max_length=100,blank=False,null=False)
 	govt_unit  = models.ForeignKey(GovernmentalUnit,blank=False,null=False)
 	precincts = models.ManyToManyField(Precinct)
+	sort_order = models.IntegerField(blank=True,null=True)
 
 	def __str__(self):
 		return self.name
@@ -170,7 +177,7 @@ class District(ModelBase):
 			return False
 
 	class Meta:
-		ordering = ["govt_unit","name"]
+		ordering = ["sort_order","govt_unit","name"]
 		permissions = (('view_district', "View District"),)
 	
 	class Admin:
@@ -181,6 +188,7 @@ class District(ModelBase):
 class Office(ModelBase):
 	district = models.ForeignKey(District,blank=False,null=False)
 	name  = models.CharField(max_length=100,blank=False,null=False)
+	sort_order = models.IntegerField(blank=True,null=True)
 
 	def __str__(self):
 		return self.district.__str__() + ' ' + self.name
@@ -194,7 +202,7 @@ class Office(ModelBase):
 			return False
 
 	class Meta:
-		ordering = ["district","name"]
+		ordering = ["sort_order","district","name"]
 		permissions = (('view_office', "View Office"),)
 	
 	class Admin:
@@ -206,6 +214,7 @@ class Race(ModelBase):
 	votes_allowed = models.IntegerField(blank=False,null=False,default=1)
 	election = models.ForeignKey(Election,blank=False,null=False)
 	office = models.ForeignKey(Office,blank=False,null=False)
+	sort_order = models.IntegerField(blank=True,null=True)
 
 	def __str__(self):
 		return self.election.__str__() + ' ' + self.office.__str__()
@@ -219,7 +228,7 @@ class Race(ModelBase):
 			return False
 
 	class Meta:
-		ordering = ["election","office"]
+		ordering = ["sort_order","election","office"]
 		permissions = (('view_race', "View Race"),)
 	
 	class Admin:
@@ -234,12 +243,13 @@ class Candidate(ModelBase):
 	party = models.ForeignKey(Party,blank=True,null=True)
 	incumbent = models.BooleanField(blank=False,null=False,default=False)
 	url = models.URLField(blank=True,null=True)
+	sort_order = models.IntegerField(blank=True,null=True)
 
 	def __str__(self):
 		return self.name
 
 	class Meta:
-		ordering = ["name"]
+		ordering = ["sort_order","name"]
 		permissions = (('view_candidate', "View Candidate"),)
 	
 	class Admin:
@@ -252,12 +262,13 @@ class Proposal(ModelBase):
 	election = models.ForeignKey(Election,blank=False,null=False)
 	title = models.CharField(max_length=200,blank=False,null=False)
 	text = models.TextField(blank=False,null=False)
+	sort_order = models.IntegerField(blank=True,null=True)
 
 	def __str__(self):
 		return self.title
 
 	class Meta:
-		ordering = ["title"]
+		ordering = ["sort_order","title"]
 		permissions = (('view_proposal', "View Proposal"),)
 	
 	class Admin:
