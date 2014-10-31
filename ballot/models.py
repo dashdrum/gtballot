@@ -156,7 +156,7 @@ class Precinct(ModelBase):
 class District(ModelBase):
 	name = models.CharField(max_length=100,blank=False,null=False)
 	govt_unit  = models.ForeignKey(GovernmentalUnit,blank=False,null=False)
-	precints = models.ManyToManyField(Precinct)
+	precincts = models.ManyToManyField(Precinct)
 
 	def __str__(self):
 		return self.name

@@ -98,7 +98,7 @@ class TestPrecinctModel(BallotTestCase):
         self.assertTrue(pr.allow_delete)
 
         d = DistrictFactory.create()
-        d.precints.add(pr)
+        d.precincts.add(pr)
         d.save()
         self.assertFalse(pr.allow_delete)
 

@@ -27,7 +27,7 @@ class BallotTestCase(TestCase):
 		self.pr = PrecinctFactory.create()
 		self.p = PartyFactory.create()
 		self.d = DistrictFactory.create()
-		self.d.precints.add(self.pr)
+		self.d.precincts.add(self.pr)
 		self.d.save()
 		self.o = OfficeFactory.create(district=self.d)
 		self.r = RaceFactory.create(office=self.o,election=self.e)
