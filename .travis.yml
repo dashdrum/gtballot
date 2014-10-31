@@ -3,7 +3,7 @@ env:
     - DJANGO_VERSION=1.4.16
     - DJANGO_VERSION=1.5.11
     - DJANGO_VERSION=1.6.8
-   ## - DJANGO_VERSION=1.7
+    - DJANGO_VERSION=1.7
     - DJANGO_VERSION=1.7.1
 python:
     - 3.4
@@ -23,8 +23,8 @@ after_success: coveralls
 matrix:
   exclude:
     # Django doesn't support following combinations
- ##   - python: 2.6
- ##     env: DJANGO_VERSION=1.7
+    - python: 2.6
+      env: DJANGO_VERSION=1.7
     - python: 2.6
       env: DJANGO_VERSION=1.7.1
     - python: 3.2
@@ -39,3 +39,13 @@ matrix:
       env: DJANGO_VERSION=1.5.11
     - python: 3.4
       env: DJANGO_VERSION=1.6.8
+  # Django 1.7 is having trouble with 1.7.1 migrations
+  allow_failures:
+    - python 3.4
+      env: DJANGO_VERSION=1.7
+    - python 3.3
+      env: DJANGO_VERSION=1.7
+    - python 3.2
+      env: DJANGO_VERSION=1.7
+    - python 2.7
+      env: DJANGO_VERSION=1.7
