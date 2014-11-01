@@ -1,0 +1,18 @@
+{% extends "admin/base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block title %}{{ title }} | {% trans 'GT Ballot' %}{% endblock %}
+
+{% block extrastyle %}<link href="{% static 'gtballot/css/custom_admin.css'%}" rel="stylesheet" type="text/css" />{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">{% trans 'Ballot Administration' %}</h1>
+{% endblock %}
+
+{% comment %}{% block nav-global %}<a href="{% url 'home' %}">Return to Application</a>{% endblock %}{% endcomment %}
+{% comment %} The odd link syntax above allows this to work during Django tests {% endcomment %}
+
+{% block footer %}{{ block.super }}
+				
+{% endblock footer %}

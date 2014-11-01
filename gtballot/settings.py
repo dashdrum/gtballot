@@ -22,7 +22,7 @@ SECRET_KEY = '3i1a^9&k!8i1+am1g1@v##=&1v*%=$24#pgxdfi-ms3dkg$^03'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = []
 
@@ -79,6 +79,15 @@ if django.get_version() < '1.6':
         'django.contrib.messages.middleware.MessageMiddleware',
     )
 
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+)
+
+TEMPLATE_DIRS = (
+    os.path.join(os.path.dirname(__file__), 'templates').replace ('\\','/'),
+)
+
 ROOT_URLCONF = 'gtballot.urls'
 
 WSGI_APPLICATION = 'gtballot.wsgi.application'
@@ -112,3 +121,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "gtballot/static"),
+)

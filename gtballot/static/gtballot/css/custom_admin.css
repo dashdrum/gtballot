@@ -1,0 +1,28 @@
+.tablehd td{background: #2c5e38; color: #f1f1f1; padding: 2px 17px; font-weight:bold;}
+.row1 {background-color: #dedede;}
+.row2 {background-color: #ffffff;}
+.row1 td{padding: 2px 17px;}
+.row2 td{padding: 2px 17px;}
+
+
+.row1 a{color: #98742e; font-weight:bold;}
+.row2 a{color: #98742e; font-weight:bold;}
+
+h1 {color: #2c5e38;}
+
+.objID {text-align:right;}
+
+#content-related h3 {color: #2c5e38;}
+
+#header{ background-color: #2c5e38; color: #f1f1f1; border-bottom: solid 3px #999; }
+
+#branding h1{ color: #f1f1f1; }
+
+.module h2, .module caption, .inline-group h2 , #content-related .module h2
+  { background:#2c5e38 bottom left repeat-x; color: #f1f1f1; }
+  
+a.section:link, a.section:visited { color: #f1f1f1; }
+
+.breadcrumbs a{color: #2c5e38;}
+
+.module a{color: #2c5e38;}

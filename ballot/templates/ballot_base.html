@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block css_shared %}
+
+		<!-- Application CSS -->
+		<link rel="stylesheet" href="{% static 'ballot/css/app.css' %}">
+
+{% endblock css_shared %}
+
+{% block nav_items %}
+<li><a href="{% url 'prec_list'%}" title="Precinct List">Precinct List</a></li>
+{% endblock nav_items %}

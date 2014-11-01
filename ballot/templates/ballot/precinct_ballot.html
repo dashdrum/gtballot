@@ -1,8 +1,8 @@
-<html>
-<head>
-<title>Precinct Ballot</title>
-</head>
-<body>
+{% extends "ballot_base.html" %}
+
+{% block title %}{{ block.super }} Precinct Ballot{% endblock title %}
+
+{% block content %}
 <h1>Precinct Ballot</h1>
 {% regroup object_list by race.office.district as district_list %}
 {% for d in district_list %}
@@ -15,6 +15,5 @@
 {% endfor %}
 {% endfor %}
 {% endfor %}
-</body>
-</html>
+{% endblock content %}
 

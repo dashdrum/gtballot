@@ -8,4 +8,5 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^ballot/', include('ballot.urls')),
+  #  url(r'^$', ,name='home'),
 )
