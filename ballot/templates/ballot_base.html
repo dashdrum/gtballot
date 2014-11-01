@@ -1,8 +1,11 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
+{% load url from future %}
 
 
 {% block css_shared %}
+
+		{{ block.super }}
 
 		<!-- Application CSS -->
 		<link rel="stylesheet" href="{% static 'ballot/css/app.css' %}">
@@ -10,5 +13,5 @@
 {% endblock css_shared %}
 
 {% block nav_items %}
-<li><a href="{% url 'prec_list'%}" title="Precinct List">Precinct List</a></li>
+<li><a href="{% url 'prec_list' %}" title="Precinct List">Precinct List</a></li>
 {% endblock nav_items %}

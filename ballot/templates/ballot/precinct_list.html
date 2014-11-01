@@ -1,14 +1,16 @@
 {% extends 'ballot_base.html'%}
+{% load url from future %}
 
 {% block title %}{{ block.super }}Precinct List{% endblock title %}
 
 {% block content %}
 <h1>Precinct List</h1>
+<p><em>(click precinct code to view ballot)</em></p>
 {% regroup object_list by prec_area as area_prec %}
 {% for pa in area_prec %}
 <h3>{{ pa.grouper.name}}</h3>
 {% for pr in pa.list %}
-<p>{{ pr.prec_area.code }}{{ pr.prec_number}} {{ pr.polling_location }}</p>
+<p><a href="{% url 'prec_ballot' 1 pr.id %}">{{ pr.prec_area.code }}{{ pr.prec_number}}</a> {{ pr.polling_location }}</p>
 {% endfor %}
 {% endfor %}
 {% endblock content %}
