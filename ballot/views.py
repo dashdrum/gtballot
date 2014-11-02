@@ -1,8 +1,11 @@
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
+from django.views.generic import ListView, FormView
+from django.core.urlresolvers import reverse
 
-from django.views.generic import ListView
 
 from .models import Precinct, Candidate
+from .forms import PrecinctSelectForm
 
 #------------------------------------------------------------------------------#
 
@@ -27,3 +30,11 @@ class PrecinctBallotView(ListView):
 		qs = qs.order_by('race__office__district__name','race__office__name')
 		
 		return qs
+
+class PrecinctSelectView(FormView):
+	form_class = PrecinctSelectForm
+	template_name = 'ballot/precinct_select.html'
+
+	def form_valid(self,form):
+		prec_id = form.cleaned_data.get('precinct').id
+		return HttpResponseRedirect(reverse('prec_ballot', kwargs={'election_id': 1, 'prec_id': prec_id }))

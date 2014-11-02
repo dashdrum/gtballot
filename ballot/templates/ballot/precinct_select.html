@@ -1,0 +1,21 @@
+{% extends 'ballot_base.html'%}
+
+{% block title %}{{ block.super }}Precinct Select{% endblock title %}
+
+{% block content %}
+<h1>GT Ballot</h1>
+<p>Select your precinct to view your ballot, or <a href="{% url 'prec_list' %}" title="Precinct List">view the list</a> of all precincts</p>
+
+<form action="." method="post" class="prec_select"> {% csrf_token %}
+
+
+{{ form.as_p }}
+
+<p>
+<label>&nbsp;</label>
+<input type="submit" value="View Ballot" /> 
+</p>
+</form> 
+
+{% endblock content %}
+
