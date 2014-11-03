@@ -3,8 +3,9 @@ from django.http import HttpResponseRedirect
 from django.views.generic import ListView, FormView
 from django.core.urlresolvers import reverse
 
+from annoying.functions import get_object_or_None
 
-from .models import Precinct, Candidate
+from .models import Precinct, Candidate, Election
 from .forms import PrecinctSelectForm
 
 #------------------------------------------------------------------------------#
@@ -30,6 +31,14 @@ class PrecinctBallotView(ListView):
 		qs = qs.order_by('race__office__district__name','race__office__name')
 		
 		return qs
+
+	def get_context_data(self, **kwargs):
+		context = super(PrecinctBallotView,self).get_context_data(**kwargs)
+		election = get_object_or_None(Election,pk=self.kwargs.get('election_id', None))
+		precinct = get_object_or_None(Precinct,pk=self.kwargs.get('prec_id', None))
+		context['election'] = election
+		context['precinct'] = precinct
+		return context
 
 class PrecinctSelectView(FormView):
 	form_class = PrecinctSelectForm

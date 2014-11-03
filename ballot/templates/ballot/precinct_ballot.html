@@ -3,15 +3,18 @@
 {% block title %}{{ block.super }} Precinct Ballot{% endblock title %}
 
 {% block content %}
-<h1>Precinct Ballot</h1>
+<h1>{{ precinct.prec_area.name }} {{ precinct.prec_number }} Precinct Ballot</h1>
+<h3>for {{ election.name }}, {{ election.election_date }}</h3>
+<p><strong>Polling Place:</strong> {{ precinct.polling_location }}
 {% regroup object_list by race.office.district as district_list %}
 {% for d in district_list %}
 <h2>District: {{ d.grouper.name }}</h2>
-{% regroup d.list by race.office as office_list %}
-{% for o in office_list %}
-<h3>Office: {{ o.grouper.name }}</h3>
-{% for c in o.list %}
-<p>{{ c.name }}</p>
+{% regroup d.list by race as race_list %}
+{% for r in race_list %}
+<h3>Office: {{ r.grouper.office.name }}</h3>
+{% if r.grouper.votes_allowed > 1 %}<p><strong>(vote for not more than {{ r.grouper.votes_allowed }})</strong></p>{% endif %}
+{% for c in r.list %}
+<p>{% if c.party %}{{ c.party.code }}{% else %}NP{% endif %} {{ c.name }} {% if c.incumbent %}(I){% endif %}</p>
 {% endfor %}
 {% endfor %}
 {% endfor %}
