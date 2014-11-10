@@ -10,6 +10,27 @@ from .forms import PrecinctSelectForm
 
 #------------------------------------------------------------------------------#
 
+class PostToGetMixin(object):  
+	
+	def post(self,request,*args,**kwargs):
+		''' offer use of POST to avoid caching in the browser '''
+		return self.get(request, *args, **kwargs)    
+	
+class AjaxListHTMLView(PostToGetMixin, ListView):   
+	pass
+
+#------------------------------------------------------------------------------#
+
+class GetPrecinctOptionsView(AjaxListHTMLView):
+	template_name = 'ballot/precinct_options.html'
+	model = Precinct
+		
+	def get_queryset(self):
+		prec_area = self.kwargs['prec_area']
+		qs = super(GetPrecinctOptionsView,self).get_queryset()
+		qs = qs.filter(prec_area__pk = prec_area)
+		return qs
+
 class PrecinctListView(ListView):
 
 	model=Precinct

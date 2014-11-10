@@ -7,12 +7,12 @@ from .models import PrecinctArea, Precinct
 
 class PrecinctSelectForm(Form):
 
-	precint_area = ModelChoiceField(queryset=PrecinctArea.objects.all())
+	precinct_area = ModelChoiceField(queryset=PrecinctArea.objects.all())
 	precinct = ModelChoiceField(queryset=Precinct.objects.all())
 
 	def __init__(self, *args, **kwargs):
 		super(PrecinctSelectForm, self).__init__(*args, **kwargs)
-		
+
 		self.helper = FormHelper()
 		self.helper.form_id = 'id-prec-select'
 	##	self.helper.form_class = 'blueForms'
@@ -22,17 +22,17 @@ class PrecinctSelectForm(Form):
 		self.helper.label_class = 'col-lg-2'
 		self.helper.field_class = 'col-lg-2'
 		self.helper.layout = Layout(
-			Field('precint_area',
+			Field('precinct_area',
 				  label="Township/City",
 				),
 			Field('precinct', 
-				   # disabled='disabled', 
+				   disabled='disabled', 
 				),
 			ButtonHolder(
 				Submit('submit', 
 					   'View Ballot', 
 					   css_class='button white', 
-					   # disabled='disabled',
+					   disabled='disabled',
 				)
 			),
 		)

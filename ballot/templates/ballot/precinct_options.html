@@ -1,0 +1,4 @@
+<option value="" selected="selected">---------</option>
+{% for p in object_list %}
+    <option value="{{ p.pk }}">{{ p.prec_area.code }}{{ p.prec_number }}</option>
+{% endfor %}
