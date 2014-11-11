@@ -42,3 +42,5 @@ matrix:
   # Django 1.7 is having trouble with 1.7.1 migrations
   allow_failures:
     - env: DJANGO_VERSION=1.7
+  # Crispy Forms doesn't like Python 3.2
+    - python: 3.2
