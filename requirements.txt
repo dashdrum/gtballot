@@ -2,4 +2,5 @@ django
 -e git://github.com/dashdrum/dashdrum-django-snips.git#egg=dashdrum-django-snips
 django-annoying
 django-braces
-django-crispy-forms
+#django-crispy-forms
+-e git://github.com/dashdrum/django-crispy-forms.git@strictversion#egg=django-crispy-forms
