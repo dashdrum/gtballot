@@ -13,8 +13,7 @@ python:
     - 2.6
 install:
   - pip install -q django==$DJANGO_VERSION
-  - pip install -r requirements.txt
-  - pip install -r test_requirements.txt
+  - pip install -r requirements/development.txt
   - pip install coveralls
 script:
   - python manage.py test
@@ -39,8 +38,8 @@ matrix:
       env: DJANGO_VERSION=1.5.11
     - python: 3.4
       env: DJANGO_VERSION=1.6.8
-  # Django 1.7 is having trouble with 1.7.1 migrations
   allow_failures:
+  # Django 1.7 is having trouble with 1.7.1 migrations
     - env: DJANGO_VERSION=1.7
   # Crispy Forms doesn't like Python 3.2
     - python: 3.2
