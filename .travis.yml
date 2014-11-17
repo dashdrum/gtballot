@@ -2,6 +2,8 @@ language: python
 env:
   global:
     - DEBUG=True
+    - SECRET_KEY='3i1a^9&k!8i1+am1g1@v##=&1v*%=$24#pgxdfi-ms3dkg$^03'
+    - ALLOWED_HOSTS='*'
   matrix:
     - DJANGO_VERSION=1.4.16
     - DJANGO_VERSION=1.5.11 
