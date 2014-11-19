@@ -107,6 +107,9 @@ STATICFILES_DIRS = (
     join(BASE_DIR, "gtballot/static"),
 )
 
+if not DEBUG:
+    STATIC_ROOT = environ['STATIC_ROOT']
+
 # Other
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
