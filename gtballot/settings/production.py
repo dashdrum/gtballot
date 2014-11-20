@@ -8,7 +8,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'gtballot',
         'USER': 'gtballot',
-        'PASSWORD': 'sp74jk',
+        'PASSWORD': 'gtballot',
         'HOST': 'localhost',
         'PORT': '',
     }

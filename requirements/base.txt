@@ -4,3 +4,4 @@ django-annoying
 django-braces
 #django-crispy-forms
 -e git://github.com/dashdrum/django-crispy-forms.git@strictversion#egg=django-crispy-forms
+psycopg2

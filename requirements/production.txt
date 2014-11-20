@@ -1,0 +1,7 @@
+## includes the base.txt requirements file
+
+-r base.txt 
+
+## for testing only
+
+factory-boy

@@ -16,7 +16,6 @@ DEBUG = bool(environ.get('DEBUG', False))
 
 TEMPLATE_DEBUG = DEBUG
 
-#ALLOWED_HOSTS = []
 ALLOWED_HOSTS = environ['ALLOWED_HOSTS'].split(',')
 
 
