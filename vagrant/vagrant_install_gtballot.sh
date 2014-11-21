@@ -16,6 +16,17 @@ if [ "$(whoami)" != "root" ]; then
 fi
 
 echo "---------------------------------------------"
+echo "Setup environment variables"
+echo "---------------------------------------------"
+sh -c "cat > /etc/profile.d/gtballot.sh" << 'EOF'
+export DEBUG=True
+export ALLOWED_HOSTS=*
+export SECRET_KEY='q97oy#2g_)&7qd4fanft$8aj2q(n3v6j&r646)d2r@(^bra))7'
+export DJANGO_SETTINGS_MODULE=gtballot.settings.production
+export STATIC_ROOT=/home/vagrant/gtballot/static/
+EOF
+
+echo "---------------------------------------------"
 echo "updating apt-get"
 echo "---------------------------------------------"
 apt-get update
@@ -38,6 +49,7 @@ sudo su - postgres << START
 createdb $DB_NAME
 psql -c "CREATE ROLE $DB_USERNAME WITH LOGIN ENCRYPTED PASSWORD '$DB_PASSWORD';"
 psql -c "GRANT ALL PRIVILEGES ON DATABASE $DB_NAME TO $DB_USERNAME;"
+psql -c "ALTER USER $DB_USERNAME WITH CREATEDB"
 START
 
 echo "---------------------------------------------"
@@ -54,7 +66,7 @@ echo "---------------------------------------------"
 echo "cloning application repository"
 echo "---------------------------------------------"
 
-sudo su - vagrant 
+sudo su vagrant 
 git clone https://github.com/dashdrum/gtballot.git
 
 echo "---------------------------------------------"
