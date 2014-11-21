@@ -1,5 +1,6 @@
 # Production settings
 
+from .base import *
 
 # Database
 
