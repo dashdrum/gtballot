@@ -14,6 +14,6 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'travis_ci_test',
         'USER': 'postgres',
-        'HOST': 'postresql',
+        'HOST': 'localhost',
     }
 }
