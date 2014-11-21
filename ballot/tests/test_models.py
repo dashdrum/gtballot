@@ -46,10 +46,10 @@ class TestPartyModel(BallotTestCase):
         self.assertEqual(Party.objects.all()[0],p3)
 
     def test_sort_order_3(self):
-        ## NULL sorts before a sort_order value 
+        ## NULL sorts after a sort_order value 
         p5 = PartyFactory.create(code='A',name='Alpha')
         p6 = PartyFactory.create(code='Z',name='Omega',sort_order=1)
-        self.assertEqual(Party.objects.all()[0],p5)
+        self.assertEqual(Party.objects.all()[0],p6)
 
 class TestUnitLevelModel(BallotTestCase):
 
@@ -75,10 +75,10 @@ class TestUnitLevelModel(BallotTestCase):
         self.assertEqual(UnitLevel.objects.all()[0],u3)
 
     def test_sort_order_3(self):
-        ## NULL sorts before a sort_order value 
+        ## NULL sorts after a sort_order value 
         u5 = UnitLevelFactory.create(code='A',name='Alpha')
         u6 = UnitLevelFactory.create(code='Z',name='Omega',sort_order=1)
-        self.assertEqual(UnitLevel.objects.all()[0],u5)
+        self.assertEqual(UnitLevel.objects.all()[0],u6)
 
 class TestGovernmentalUnitModel(BallotTestCase):
 
@@ -104,10 +104,10 @@ class TestGovernmentalUnitModel(BallotTestCase):
         self.assertEqual(GovernmentalUnit.objects.all()[0],g3)
 
     def test_sort_order_3(self):
-        ## NULL sorts before a sort_order value 
+        ## NULL sorts after a sort_order value 
         g5 = GovernmentalUnitFactory.create(name='Alpha')
         g6 = GovernmentalUnitFactory.create(name='Omega',sort_order=1)
-        self.assertEqual(GovernmentalUnit.objects.all()[0],g5)
+        self.assertEqual(GovernmentalUnit.objects.all()[0],g6)
 
 class TestPrecinctAreaModel(BallotTestCase):
 
@@ -133,10 +133,10 @@ class TestPrecinctAreaModel(BallotTestCase):
         self.assertEqual(PrecinctArea.objects.all()[0],pa3)
 
     def test_sort_order_3(self):
-        ## NULL sorts before a sort_order value 
+        ## NULL sorts after a sort_order value 
         pa5 = PrecinctAreaFactory.create(code='A',name='Alpha')
         pa6 = PrecinctAreaFactory.create(code='Z',name='Omega',sort_order=1)
-        self.assertEqual(PrecinctArea.objects.all()[0],pa5)
+        self.assertEqual(PrecinctArea.objects.all()[0],pa6)
 
 class TestElectionModel(BallotTestCase):
 
@@ -166,10 +166,10 @@ class TestElectionModel(BallotTestCase):
         self.assertEqual(Election.objects.all()[0],e3)
 
     def test_sort_order_3(self):
-        ## NULL sorts before a sort_order value 
+        ## NULL sorts after a sort_order value 
         e5 = ElectionFactory.create(election_date=datetime.now())
         e6 = ElectionFactory.create(election_date=datetime.now()+timedelta(days=1),sort_order=1)
-        self.assertEqual(Election.objects.all()[0],e5)
+        self.assertEqual(Election.objects.all()[0],e6)
 
 class TestPrecinctModel(BallotTestCase):
 
@@ -197,10 +197,10 @@ class TestPrecinctModel(BallotTestCase):
         self.assertEqual(Precinct.objects.all()[0],pr3)
 
     def test_sort_order_3(self):
-        ## NULL sorts before a sort_order value 
+        ## NULL sorts after a sort_order value 
         pr5 = PrecinctFactory.create(prec_number='01')
         pr6 = PrecinctFactory.create(prec_number='02',sort_order=1)
-        self.assertEqual(Precinct.objects.all()[0],pr5)
+        self.assertEqual(Precinct.objects.all()[0],pr6)
 
 
 class TestDistrictModel(BallotTestCase):
@@ -231,10 +231,10 @@ class TestDistrictModel(BallotTestCase):
         self.assertEqual(District.objects.all()[0],d3)
 
     def test_sort_order_3(self):
-        ## NULL sorts before a sort_order value 
+        ## NULL sorts after a sort_order value 
         d5 = DistrictFactory.create(name='Alpha')
         d6 = DistrictFactory.create(name='Omega',sort_order=1)
-        self.assertEqual(District.objects.all()[0],d5)
+        self.assertEqual(District.objects.all()[0],d6)
 
 class TestOfficeModel(BallotTestCase):
 
@@ -260,10 +260,10 @@ class TestOfficeModel(BallotTestCase):
         self.assertEqual(Office.objects.all()[0],o3)
 
     def test_sort_order_3(self):
-        ## NULL sorts before a sort_order value 
+        ## NULL sorts after a sort_order value 
         o5 = OfficeFactory.create(name='Alpha')
         o6 = OfficeFactory.create(name='Omega',sort_order=1)
-        self.assertEqual(Office.objects.all()[0],o5)
+        self.assertEqual(Office.objects.all()[0],o6)
 
 class TestRaceModel(BallotTestCase):
 
@@ -294,10 +294,10 @@ class TestRaceModel(BallotTestCase):
         self.assertEqual(Race.objects.all()[0],r3)
 
     def test_sort_order_3(self):
-        ## NULL sorts before a sort_order value 
+        ## NULL sorts after a sort_order value 
         r5 = RaceFactory.create(office=self.o1)
         r6 = RaceFactory.create(office=self.o2,sort_order=1)
-        self.assertEqual(Race.objects.all()[0],r5)
+        self.assertEqual(Race.objects.all()[0],r6)
 
 class TestCandidateModel(BallotTestCase):
 
@@ -320,10 +320,10 @@ class TestCandidateModel(BallotTestCase):
         self.assertEqual(Candidate.objects.all()[0],c3)
 
     def test_sort_order_3(self):
-        ## NULL sorts before a sort_order value 
+        ## NULL sorts after a sort_order value 
         c5 = CandidateFactory.create(name='Alpha')
         c6 = CandidateFactory.create(name='Omega',sort_order=1)
-        self.assertEqual(Candidate.objects.all()[0],c5)
+        self.assertEqual(Candidate.objects.all()[0],c6)
 
 class TestProposalModel(BallotTestCase):
 
@@ -346,8 +346,8 @@ class TestProposalModel(BallotTestCase):
         self.assertEqual(Proposal.objects.all()[0],pp3)
 
     def test_sort_order_3(self):
-        ## NULL sorts before a sort_order value 
+        ## NULL sorts after a sort_order value 
         pp5 = ProposalFactory.create(title='Alpha')
         pp6 = ProposalFactory.create(title='Omega',sort_order=1)
-        self.assertEqual(Proposal.objects.all()[0],pp5)
+        self.assertEqual(Proposal.objects.all()[0],pp6)
 
