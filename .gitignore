@@ -132,6 +132,10 @@ docs/_build/
 # PyBuilder
 target/
 
+#Vagrant
+
+vagrant/.vagrant
+
 #Project Specific ################################
 
 ###db.sqlite3
