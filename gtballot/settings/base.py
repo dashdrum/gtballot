@@ -10,13 +10,13 @@ BASE_DIR = join(abspath(dirname(__file__)), '..','..')
 
 
 #SECRET_KEY = '3i1a^9&k!8i1+am1g1@v##=&1v*%=$24#pgxdfi-ms3dkg$^03'
-SECRET_KEY = environ['SECRET_KEY']
+SECRET_KEY = environ['DJANGO_SECRET_KEY']
 
-DEBUG = bool(environ.get('DEBUG', False))
+DEBUG = bool(environ.get('DJANGO_DEBUG', False))
 
 TEMPLATE_DEBUG = DEBUG
 
-ALLOWED_HOSTS = environ['ALLOWED_HOSTS'].split(',')
+ALLOWED_HOSTS = environ['DJANGO_ALLOWED_HOSTS'].split(',')
 
 
 # Application definition
@@ -107,7 +107,7 @@ STATICFILES_DIRS = (
 )
 
 if not DEBUG:
-    STATIC_ROOT = environ['STATIC_ROOT']
+    STATIC_ROOT = environ['DJANGO_STATIC_ROOT']
 
 # Other
 

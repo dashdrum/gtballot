@@ -19,11 +19,11 @@ echo "---------------------------------------------"
 echo "Setup environment variables"
 echo "---------------------------------------------"
 sh -c "cat > /etc/profile.d/gtballot.sh" << 'EOF'
-export DEBUG=True
-export ALLOWED_HOSTS=*
-export SECRET_KEY='q97oy#2g_)&7qd4fanft$8aj2q(n3v6j&r646)d2r@(^bra))7'
+export DJANGO_DEBUG=True
+export DJANGO_ALLOWED_HOSTS=*
+export DJANGO_SECRET_KEY='q97oy#2g_)&7qd4fanft$8aj2q(n3v6j&r646)d2r@(^bra))7'
 export DJANGO_SETTINGS_MODULE=gtballot.settings.production
-export STATIC_ROOT=/home/vagrant/gtballot/static/
+export DJANGO_STATIC_ROOT=/home/vagrant/gtballot/static/
 EOF
 
 echo "---------------------------------------------"
