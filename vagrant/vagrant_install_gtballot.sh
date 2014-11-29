@@ -58,35 +58,32 @@ echo "---------------------------------------------"
 apt-get install -y git-core
 
 echo "---------------------------------------------"
-echo "installing install pip"
+echo "install virtualenv"
 echo "---------------------------------------------"
-apt-get install -y python-pip
+apt-get install -y python-virtualenv
+
+sudo su - vagrant  << PIP
+
+
+echo "---------------------------------------------"
+echo "create virtualenv"
+echo "---------------------------------------------"
+virtualenv gtballotenv
+source gtballotenv/bin/activate
+
 
 echo "---------------------------------------------"
 echo "cloning application repository"
 echo "---------------------------------------------"
-
-sudo su vagrant 
 git clone https://github.com/dashdrum/gtballot.git
 
 echo "---------------------------------------------"
 echo "installing django env based on a requirements file."
 echo "---------------------------------------------"
 pip install -r "gtballot/requirements/production.txt"
+PIP
 
 echo "---------------------------------------------"
 echo " Finished."
 echo "---------------------------------------------"
 
-printf "Assuming there were no errors above with postgres, here'e the info for your settings.py
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': '$DB_NAME',
-        'USER': '$DB_USERNAME',
-        'PASSWORD': '$DB_PASSWORD',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
-"
