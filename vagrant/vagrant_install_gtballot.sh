@@ -16,17 +16,6 @@ if [ "$(whoami)" != "root" ]; then
 fi
 
 echo "---------------------------------------------"
-echo "Setup environment variables"
-echo "---------------------------------------------"
-sh -c "cat > /etc/profile.d/gtballot.sh" << 'EOF'
-export DJANGO_DEBUG=True
-export DJANGO_ALLOWED_HOSTS=*
-export DJANGO_SECRET_KEY='q97oy#2g_)&7qd4fanft$8aj2q(n3v6j&r646)d2r@(^bra))7'
-export DJANGO_SETTINGS_MODULE=gtballot.settings.production
-export DJANGO_STATIC_ROOT=/home/vagrant/gtballot/static/
-EOF
-
-echo "---------------------------------------------"
 echo "updating apt-get"
 echo "---------------------------------------------"
 apt-get update
@@ -35,6 +24,14 @@ echo "---------------------------------------------"
 echo "installing libpq-dev python-dev used by postgresql"
 echo "---------------------------------------------"
 apt-get install -y libpq-dev python-dev
+
+echo "---------------------------------------------"
+echo "installing supervisor"
+echo "---------------------------------------------"
+apt-get install -y supervisor
+cp /home/vagrant/django_shared/gtballot.conf /etc/supervisor/conf.d/gtballot.conf
+mkdir -p /home/vagrant/logs/
+touch /home/vagrant/logs/gunicorn_supervisor.log
 
 echo "---------------------------------------------"
 echo "installing postgresql"
@@ -62,7 +59,7 @@ echo "install virtualenv"
 echo "---------------------------------------------"
 apt-get install -y python-virtualenv
 
-sudo su - vagrant  << PIP
+sudo su - vagrant  << VAGRANT
 
 
 echo "---------------------------------------------"
@@ -81,7 +78,27 @@ echo "---------------------------------------------"
 echo "installing django env based on a requirements file."
 echo "---------------------------------------------"
 pip install -r "gtballot/requirements/production.txt"
-PIP
+
+echo "---------------------------------------------"
+echo "initialize database"
+echo "---------------------------------------------"
+
+export DJANGO_DEBUG=True
+export DJANGO_ALLOWED_HOSTS=*
+export DJANGO_SECRET_KEY='q97oy#2g_)&7qd4fanft$8aj2q(n3v6j&r646)d2r@(^bra))7'
+export DJANGO_SETTINGS_MODULE=gtballot.settings.production
+export DJANGO_STATIC_ROOT=/home/vagrant/gtballot/static/
+
+cd ~/gtballot
+./manage.py migrate
+./manage.py loaddata ballot/fixtures/gen2014-2.json
+
+VAGRANT
+
+echo "---------------------------------------------"
+echo "start gunicorn"
+echo "---------------------------------------------"
+supervisorctl reread
 
 echo "---------------------------------------------"
 echo " Finished."
