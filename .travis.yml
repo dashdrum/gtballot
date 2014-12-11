@@ -1,9 +1,9 @@
 language: python
 env:
   global:
-    - DEBUG=True
-    - SECRET_KEY='3i1a^9&k!8i1+am1g1@v##=&1v*%=$24#pgxdfi-ms3dkg$^03'
-    - ALLOWED_HOSTS=''
+    - DJANGO_DEBUG=True
+    - DJANGO_SECRET_KEY='1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMN'
+    - DJANGO_ALLOWED_HOSTS=''
     - DJANGO_SETTINGS_MODULE=gtballot.settings.travis
   matrix:
     - DJANGO_VERSION=1.4.16

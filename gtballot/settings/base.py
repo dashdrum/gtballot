@@ -106,8 +106,7 @@ STATICFILES_DIRS = (
     join(BASE_DIR, "gtballot/static"),
 )
 
-if not DEBUG:
-    STATIC_ROOT = environ['DJANGO_STATIC_ROOT']
+STATIC_ROOT = environ['DJANGO_STATIC_ROOT']
 
 # Other
 

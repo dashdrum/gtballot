@@ -34,6 +34,15 @@ mkdir -p /home/vagrant/logs/
 touch /home/vagrant/logs/gunicorn_supervisor.log
 
 echo "---------------------------------------------"
+echo "installing nginx"
+echo "---------------------------------------------"
+apt-get install -y nginx
+rm /etc/nginx/sites-enabled/default
+ln -s /home/vagrant/django_shared/gtballot_nginx /etc/nginx/sites-enabled/gtballot
+service nginx restart 
+apt-get install -y lynx
+
+echo "---------------------------------------------"
 echo "installing postgresql"
 echo "---------------------------------------------"
 apt-get install -y postgresql postgresql-contrib
@@ -98,7 +107,8 @@ VAGRANT
 echo "---------------------------------------------"
 echo "start gunicorn"
 echo "---------------------------------------------"
-supervisorctl reread
+supervisorctl update
+supervisorctl restart gtballot
 
 echo "---------------------------------------------"
 echo " Finished."

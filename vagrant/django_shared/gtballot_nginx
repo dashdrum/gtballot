@@ -1,0 +1,12 @@
+server {
+    listen 80 default_server;
+
+    location / {
+        proxy_pass http://localhost:8000;
+    }
+
+    location /static/ {
+        autoindex on;
+        alias /home/vagrant/gtballot/static/;
+    }
+}
