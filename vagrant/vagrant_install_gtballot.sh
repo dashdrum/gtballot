@@ -89,18 +89,36 @@ echo "---------------------------------------------"
 pip install -r "gtballot/requirements/production.txt"
 
 echo "---------------------------------------------"
-echo "initialize database"
+echo "set environment variables"
 echo "---------------------------------------------"
 
-export DJANGO_DEBUG=True
-export DJANGO_ALLOWED_HOSTS=*
-export DJANGO_SECRET_KEY='q97oy#2g_)&7qd4fanft$8aj2q(n3v6j&r646)d2r@(^bra))7'
-export DJANGO_SETTINGS_MODULE=gtballot.settings.production
+export DJANGO_DEBUG=True 
+export DJANGO_ALLOWED_HOSTS=* 
+export DJANGO_SECRET_KEY='q97oy#2g_)&7qd4fanft$8aj2q(n3v6j&r646)d2r@(^bra))7' 
+export DJANGO_SETTINGS_MODULE=gtballot.settings.production 
 export DJANGO_STATIC_ROOT=/home/vagrant/gtballot/static/
+
+echo "export DJANGO_DEBUG=True 
+export DJANGO_ALLOWED_HOSTS=* 
+export DJANGO_SECRET_KEY='q97oy#2g_)&7qd4fanft$8aj2q(n3v6j&r646)d2r@(^bra))7' 
+export DJANGO_SETTINGS_MODULE=gtballot.settings.production 
+export DJANGO_STATIC_ROOT=/home/vagrant/gtballot/static/" >> /home/vagrant/.bashrc
+
+source .bashrc
+
+echo "---------------------------------------------"
+echo "initialize database"
+echo "---------------------------------------------"
 
 cd ~/gtballot
 ./manage.py migrate
 ./manage.py loaddata ballot/fixtures/gen2014-2.json
+
+echo "---------------------------------------------"
+echo " collect static files"
+echo "---------------------------------------------"
+
+./manage.py collectstatic
 
 VAGRANT
 
