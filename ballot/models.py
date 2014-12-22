@@ -274,3 +274,10 @@ class Proposal(ModelBase):
 	class Admin:
 		pass
 
+class MyModel(models.Model):
+    field = models.CharField(max_length=31, 
+    	choices=(('FR','Freshman'),('SO','Sophomore'),('JR','Junior'),('SR','Senior')) )
+
+    def __init__(self, *args, **kwargs):
+        super(MyModel, self).__init__(*args, **kwargs)
+      #  self._meta.get_field_by_name('field')[0]._choices = (('FR','Freshman'),('SO','Sophomore'),('JR','Junior'),('SR','Senior'))

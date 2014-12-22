@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, url
 from django.views.generic import RedirectView
 
-from .views import PrecinctListView, PrecinctBallotView, PrecinctSelectView, GetPrecinctOptionsView
+from .views import PrecinctListView, PrecinctBallotView, PrecinctSelectView, GetPrecinctOptionsView, MyModelCreateView
 
 urlpatterns = patterns('',
 
@@ -9,6 +9,7 @@ urlpatterns = patterns('',
     url(r'^prec_select/', PrecinctSelectView.as_view(),name='prec_select'),
     url(r'^prec_ballot/(?P<election_id>\d+)/(?P<prec_id>\d+)/$', PrecinctBallotView.as_view(),name='prec_ballot'),
     url(r'^prec_options/(?P<prec_area>\d+)/$', GetPrecinctOptionsView.as_view(), name = 'prec_options'),
+    url(r'^MyModel/', MyModelCreateView.as_view(), name = 'my_model_view'),
 
     (r'^$', RedirectView.as_view(url='prec_select')),
 )

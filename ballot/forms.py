@@ -36,3 +36,14 @@ class PrecinctSelectForm(Form):
 				)
 			),
 		)
+
+from django.forms import ModelForm, ChoiceField
+from .models import MyModel
+
+class MyModelForm(ModelForm):
+
+	field = ChoiceField()
+
+	class Meta:
+		model = MyModel
+		fields = ['field',]

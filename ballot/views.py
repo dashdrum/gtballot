@@ -68,3 +68,11 @@ class PrecinctSelectView(FormView):
 	def form_valid(self,form):
 		prec_id = form.cleaned_data.get('precinct').id
 		return HttpResponseRedirect(reverse('prec_ballot', kwargs={'election_id': 1, 'prec_id': prec_id }))
+
+from django.views.generic import CreateView
+from .models import MyModel
+from .forms import MyModelForm
+
+class MyModelCreateView(CreateView):
+	model = MyModel
+	form_class = MyModelForm
