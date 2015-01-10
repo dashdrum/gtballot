@@ -4,7 +4,7 @@ from django.contrib import admin
 
 from .models import (Party, UnitLevel, GovernmentalUnit, PrecinctArea,
 					Election, Precinct, District, Office, Race,
-					Candidate, Proposal)
+					Candidate, Proposal, MyModel)
 
 admin.site.register(Party)
 admin.site.register(UnitLevel)
@@ -18,3 +18,5 @@ admin.site.register(Office)
 admin.site.register(Race)
 admin.site.register(Candidate) 
 admin.site.register(Proposal)
+
+admin.site.register(MyModel)
