@@ -11,66 +11,76 @@ from ballot.models import (Party, UnitLevel, GovernmentalUnit, PrecinctArea,
                            Office, Candidate)
 
 class PartyFactory(factory.DjangoModelFactory):
-    FACTORY_FOR = Party
+    class Meta:
+        model = Party
 
     code = factory.Sequence(lambda n:  n, str)
     name = factory.Sequence(lambda n: 'Party' + n, str)
 
 class UnitLevelFactory(factory.DjangoModelFactory):
-    FACTORY_FOR = UnitLevel
+    class Meta:
+        model = UnitLevel
 
     code = factory.Sequence(lambda n:  n, str)
     name = factory.Sequence(lambda n: 'UnitLevel' + n, str)
 
 class GovernmentalUnitFactory(factory.DjangoModelFactory):
-    FACTORY_FOR = GovernmentalUnit
+    class Meta:
+        model = GovernmentalUnit
 
     name = factory.Sequence(lambda n: 'GovernmentalUnit' + n, str)
     unit_level = factory.SubFactory(UnitLevelFactory)
     
 
 class PrecinctAreaFactory(factory.DjangoModelFactory):
-    FACTORY_FOR = PrecinctArea
+    class Meta:
+        model = PrecinctArea
 
     code = factory.Sequence(lambda n:  n, str)
     name = factory.Sequence(lambda n: 'PrecinctArea ' + n, str)
     
 
 class ElectionFactory(factory.DjangoModelFactory):
-    FACTORY_FOR = Election
+    class Meta:
+        model = Election
 
     name = factory.Sequence(lambda n: 'Election' + n, str)
     election_date = (now() + timedelta(days=100)).date()
 
 class PrecinctFactory(factory.DjangoModelFactory):
-    FACTORY_FOR = Precinct
+    class Meta:
+        model = Precinct
 
     prec_area = factory.SubFactory(PrecinctAreaFactory)
     prec_number = factory.Sequence(lambda n: n, str)
     polling_location = factory.Sequence(lambda n: "Location " + n, str)
 
 class DistrictFactory(factory.DjangoModelFactory):
-    FACTORY_FOR = District
+    class Meta:
+        model = District
 
     name = factory.Sequence(lambda n: "District " + n, str)
     govt_unit = factory.SubFactory(GovernmentalUnitFactory)
     # precincts
 
 class OfficeFactory(factory.DjangoModelFactory):
-    FACTORY_FOR = Office
+    class Meta:
+        model = Office
 
     district = factory.SubFactory(DistrictFactory)
     name = factory.Sequence(lambda n: "Office " + n, str)
 
 class RaceFactory(factory.DjangoModelFactory):
-    FACTORY_FOR = Race
+    class Meta:
+        model = Race
 
     votes_allowed = factory.Sequence(lambda n: n, int)
     election = factory.SubFactory(ElectionFactory)
     office = factory.SubFactory(OfficeFactory)
 
 class CandidateFactory(factory.DjangoModelFactory):
-    FACTORY_FOR = Candidate
+    class Meta:
+        model = Candidate
 
     race = factory.SubFactory(RaceFactory)
     name = factory.Sequence(lambda n: "Candidate " + n, str)
@@ -80,7 +90,8 @@ class CandidateFactory(factory.DjangoModelFactory):
     url = factory.Sequence(lambda n: 'http://example.com/' + n, str)
 
 class ProposalFactory(factory.DjangoModelFactory):
-    FACTORY_FOR = Proposal
+    class Meta:
+        model = Proposal
 
     district = factory.SubFactory(DistrictFactory)
     election = factory.SubFactory(ElectionFactory)
